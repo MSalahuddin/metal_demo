@@ -11,28 +11,17 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
-import {  Colors, Metrics, Fonts} from '../../../theme';
+import { Images, Colors, Metrics, Fonts} from '../../../theme';
 import {  CustomTextInput, Button, Logo, Form } from '../../../components';
+import { request as login_request } from '../../redux/actions/../Login';
 import { AuthString } from "../../../constant/stringConstants";
+import {bg_half, background, transparent_logo, avatar, fingerprint, transparent_fingure} from "../../../assets/images";
 import {
-  bg_half, 
-  background, 
-  transparent_logo, 
-  avatar, 
-  fingerprint, 
-  login_line,
-  up_arrow
-} from "../../../assets/images";
-import {SCREENS} from "../../../constant/constant";
+  SCREENS
+} from "../../../constant/constant";
 
-let errors = {
-  emailErr: 'Invalid email address.',
-  passwordErr:
-    'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
-};
-
-const EnterPin = ({navigation}) => {
-  const dispatch = useDispatch();
+const PhoneNo = ({navigation}) => {
+  const [phoneNo, setPhoneNo] = useState("");
 
   return (
     <ImageBackground
@@ -59,38 +48,30 @@ const EnterPin = ({navigation}) => {
            shadowRadius: 6.27,
            elevation: 10,
         }}>
-          <View style = {{
-            position: 'absolute',
-            top: Metrics.ratio(-50),
-            borderRadius: Metrics.ratio(40),
-            borderColor: Colors.white,
-            borderWidth: Metrics.ratio(4)
-          }}>
-            <Image source={avatar}/>
-          </View>
+          
           <Text style = {
             {
             fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.fourteen,
+            fontSize: Fonts.size.eighteen,
             color: Colors.placeholderContent,
-            marginTop: Metrics.ratio(40)
+            marginTop: Metrics.ratio(20)
            }
-          }>NAZLIHAN GUNAYLER</Text>
+          }>{AuthString.PhoneNo.letStart}</Text>
+         
             <CustomTextInput
-                inputRightIcon={fingerprint}
                 placeholderTextColor = {Colors.placeholderContent}
                 customContainerStyle = {{
                   marginVertical: Metrics.ratio(15),
-                  width: "100%",
+                  width: '100%'
                 }}
                 // TextInputPaddingStyle={styles.TextInputPaddingStyle}
                 // returnKeyType="next"
                 // refrence={createRef.currentPasswordInputRef}
                 enablesReturnKeyAutomaticallly={true}
-                placeholder={AuthString.placeholder.pin}
+                placeholder={AuthString.placeholder.mobileNo}
                 editable={true}
                 // value={currentPassword}
-                // onChangeInput={(value) => setCurrentPassword(value)}
+                onChangeInput={(value) => setPhoneNo(value)}
                 // onSubmitRef={createRef.newPasswordInputRef}
                 // onSubmit={(onSubmitRef) => {
                 //   onSubmit(onSubmitRef);
@@ -98,30 +79,10 @@ const EnterPin = ({navigation}) => {
                 // emailError={currentPasswordError}
               />
               <Button 
-                customBtnStyle={{width: "100%", }} 
-                btnText = {AuthString.ButtonText.login}
-                onPress={() => {navigation.navigate(SCREENS.SCAN_BIOMETRIC)}}/>
-             
-              <Text style = {
-                  {
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.fourteen,
-                    color: Colors.primaryBtn,
-                    marginTop: Metrics.ratio(20)
-                  }
-              }>{AuthString.Signin.forgotPassword}</Text>
-              <View style = {{marginTop: Metrics.ratio(10), alignItems: "center"}}>
-                <Image source={login_line}/>
-                <Image style = {{top: Metrics.ratio(-10)}} source={up_arrow}/>
-              </View>
-               <Text style = {
-                  {
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.fourteen,
-                    color: Colors.secondaryBtnText,
-                    marginVertical: Metrics.ratio(20)
-                  }
-              }>{AuthString.Signin.loginOtherId}</Text>
+                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
+                btnText = {AuthString.ButtonText.continue}
+                onPress={() => {navigation.navigate(SCREENS.OTP)}}
+              />
         </View>
       
       </ImageBackground>
@@ -129,8 +90,7 @@ const EnterPin = ({navigation}) => {
   );
 };
 
-
-EnterPin.propTypes = {
+PhoneNo.propTypes = {
   navigation: PropTypes.shape({
     replace: PropTypes.func.isRequired,
     navigate: PropTypes.func.isRequired,
@@ -138,4 +98,5 @@ EnterPin.propTypes = {
   }).isRequired
 };
 
-export default EnterPin;
+
+export default PhoneNo;

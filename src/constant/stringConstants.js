@@ -6,6 +6,14 @@ export const AuthString = {
         enterName: "Please enter a nickname for yourself.",
         
     },
+    PhoneNo: {
+        letStart: "Let’s start with Metal",
+    },
+    CreatePin: {
+        createYourPin: "Create your PIN",
+        desc: "Please enter a PIN to login every time quickly."
+    },
+
     Signin: {
         enterPinNumber:  "Please enter your PIN number",
         forgotPassword: "Forgot your password?",
@@ -16,13 +24,16 @@ export const AuthString = {
     placeholder: {
        pin: "Enter your Pin",
        nickName: "Enter Nickname",
-       enterNickName: "Enter a nickname"
+       enterNickName: "Enter a nickname",
+       mobileNo: "Mobile Number"
     },
     ButtonText: {
         login: "LOGIN",
         create: "CREATE",
         usePassword: "Use Password",
-        cancel: "Cancel"
+        cancel: "Cancel",
+        continue: "CONTINUE",
+        resendCode: "RESEND CODE"
         
     },
     ScanBiometric: {
