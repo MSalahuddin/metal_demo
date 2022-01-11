@@ -10,6 +10,11 @@ const user_avatar = require("./avatar/user_avatar.png");
 const metal_icon = require("./metal_icon.png");
 const send_money = require("./send_money.png");
 const Invest_money = require("./Invest_money.png");
+const avatar2 = require("./avatar/avatar2.png");
+const avatar3 = require("./avatar/avatar3.png");
+const login_line = require("./login_line.png");
+const up_arrow = require("./up_arrow.png");
+
 export {
     bg_half,
     background,
@@ -22,5 +27,9 @@ export {
     user_avatar,
     metal_icon,
     send_money,
-    Invest_money
+    Invest_money,
+    avatar2,
+    avatar3,
+    login_line,
+    up_arrow
 }

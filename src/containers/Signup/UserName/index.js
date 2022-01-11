@@ -9,20 +9,20 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../../theme';
 import {  CustomTextInput, Button, Logo, Form } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
 import {bg_half, background, transparent_logo} from "../../../assets/images";
-import Icon from 'react-native-vector-icons/FontAwesome5'
+import { SCREENS } from "../../../constant/constant";
 let errors = {
   emailErr: 'Invalid email address.',
   passwordErr:
     'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
 };
 
-const UserName = (props) => {
+const CreateUserName = ({navigation}) => {
   const dispatch = useDispatch();
 
   const loginResponse = useSelector((state) => state.login);
@@ -64,10 +64,11 @@ const UserName = (props) => {
            <Text style = {
             {
             fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.sixteen,
+            fontSize: Fonts.size.eighteen,
             color: Colors.greyContent,
             marginTop: Metrics.ratio(20),
-            textAlign: "center"
+            textAlign: "center",
+            lineHeight: Metrics.ratio(20)
            }
           }>{AuthString.UserName.enterName}</Text>
             <CustomTextInput
@@ -93,6 +94,7 @@ const UserName = (props) => {
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
                 btnText = {AuthString.ButtonText.create}
+                onPress={() => {navigation.navigate(SCREENS.ENTER_PIN)}}
               />
         </View>
       
@@ -101,4 +103,12 @@ const UserName = (props) => {
   );
 };
 
-export default UserName;
+CreateUserName.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
+};
+
+export default CreateUserName;

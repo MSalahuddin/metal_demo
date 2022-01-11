@@ -21,4 +21,19 @@ export default StyleSheet.create({
      height: Metrics.screenHeight * 0.5,
      alignItems: 'center',
  },
+ underlineStyleBase: {
+  width: 30,
+  height: 45,
+  borderWidth: 0,
+  borderBottomWidth: Metrics.ratio(2),
+  borderColor:Colors.greyContent,
+  fontFamily: Fonts.type.light,
+  fontSize: Metrics.ratio(16),
+  color:Colors.greyContent,
+},
+
+underlineStyleHighLighted: {
+  borderColor:Colors.primaryBtn,
+  borderBottomWidth: Metrics.ratio(2),
+},
 });

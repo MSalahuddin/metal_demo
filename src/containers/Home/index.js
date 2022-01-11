@@ -15,7 +15,7 @@ import { Images, Colors, Metrics, Fonts} from '../../theme';
 import {  CustomTextInput, Button, Header } from '../../components';
 import { request as login_request } from '../../redux/actions/Login';
 import { commonString, home } from "../../constant/stringConstants";
-import {avatar, metal_icon, send_money, Invest_money} from "../../assets/images";
+import {avatar, metal_icon, send_money, Invest_money, avatar3} from "../../assets/images";
 
 const renderCarousel = (props) => {
   return(
@@ -38,17 +38,89 @@ const renderSelection = (props) => {
         <View style = {{
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
+          marginVertical: Metrics.ratio(20)
           }}>
-          <View style = {styles.selectButon}>
-            <Image source={send_money}/> 
-          </View>
-          <View style = {styles.selectButon}>
-            <Image source={Invest_money}/> 
-          </View>
+          <TouchableOpacity style = {styles.selectButon}>
+            <Image style = {{width: Metrics.ratio(27), height: Metrics.ratio(27)}} source={send_money}/> 
+            <Text style = {
+            {
+              fontFamily: Fonts.type.RobotoRegular,
+              fontSize: Fonts.size.fourteen,
+              color: Colors.mantle_grey,
+              marginTop: Metrics.ratio(8)
+           }
+          }>{home.sendMoney}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style = {styles.selectButon}>
+            <Image style = {{width: Metrics.ratio(27), height: Metrics.ratio(27)}} source={Invest_money}/> 
+            <Text style = {
+            {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.fourteen,
+            color: Colors.mantle_grey,
+            marginTop: Metrics.ratio(8)
+           }
+          }>{home.investMoney}</Text>
+          </TouchableOpacity>
         </View>
     </View>
   )
+}
+
+const renderListContainer = (props) => {
+  return(
+    <View style = {{
+      flexDirection: "row",
+      paddingHorizontal: Metrics.ratio(20),
+      alignItems: "center",
+      backgroundColor: Colors.white,
+      paddingVertical: Metrics.ratio(10)
+      }}>
+         <View style = {{
+          width: Metrics.ratio(40),
+          height: Metrics.ratio(40),
+          }}
+        >
+          <Image 
+            resizeMode= 'contain' 
+            resizeMethod='auto' 
+            style = {{
+            width: Metrics.ratio(40),
+            height: Metrics.ratio(40),
+            }} 
+            source={avatar3}/>
+        </View>
+        <View style = {{marginLeft: Metrics.ratio(10)}}>
+          <Text style = {
+            {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.sixteen,
+            color: Colors.secondaryBtnText,
+           }
+          }>Ann-Marita</Text>
+          <Text style = {
+            {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.fourteen,
+            color: Colors.greyContent,
+            marginTop: Metrics.ratio(3)
+           }
+          }>Dec 15, 2021, 7:15 AM</Text>
+        </View>
+        <View style = {{flexDirection: "row"}}>
+          <Text style = {
+            {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.fourteen,
+            color: Colors.greyContent,
+            marginTop: Metrics.ratio(3)
+           }
+          }>Dec 15, 2021, 7:15 AM</Text>
+          <Image/>
+        </View>
+    </View>
+  );
 }
 
 const Home = (props) => {
@@ -92,6 +164,7 @@ const Home = (props) => {
       </View>
       {renderCarousel()}
       {renderSelection()}
+      {renderListContainer()}
     </View>
   );
 };

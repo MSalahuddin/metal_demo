@@ -9,24 +9,43 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../../theme';
-import {  CustomTextInput, Button, Logo, Form } from '../../../components';
+import {  CustomTextInput, Button, OTPInput } from '../../../components';
 import { request as login_request } from '../../../redux/actions/Login';
-import { AuthString } from "../../constant/stringConstants";
-import {bg_half, background, transparent_logo, avatar, fingerprint, transparent_fingure} from "../../../assets/images";
+import { AuthString } from "../../../constant/stringConstants";
+import {bg_half, background, transparent_logo } from "../../../assets/images";
+import {SCREENS} from "../../../constant/constant";
+
 let errors = {
   emailErr: 'Invalid email address.',
   passwordErr:
     'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
 };
 
-const OTP = (props) => {
+const OTP = ({navigation}) => {
   const dispatch = useDispatch();
+  const [otpNumber, setOtpNumber] = useState('');
 
-  const loginResponse = useSelector((state) => state.login);
+  const handleVerifyOtp = async otpNumber => {
+    // navigation.navigate('SignUpPassword', { data: {last_name:'Hussain Ahmad'} })
+  };
 
+  const renderOtpInput = () => {
+    return(
+      <OTPInput
+                textInputValue={otpNumber}
+                pinCount = {4}
+                onChangeText={otpNumber => setOtpNumber(otpNumber)}
+                underlineStyleBase={styles.underlineStyleBase}
+                underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
+                handleVerifyOtp={otpNumber => {
+                    handleVerifyOtp(otpNumber);
+                }}
+      />
+    )
+  }
   return (
     <ImageBackground
     style={styles.container}
@@ -67,33 +86,15 @@ const OTP = (props) => {
             fontSize: Fonts.size.sixteen,
             color: Colors.greyContent,
             marginTop: Metrics.ratio(20),
-            textAlign: "center"
+            textAlign: "center",
+            lineHeight: Metrics.ratio(20)
            }
           }>Please enter verification code that was sent to your mobile number</Text>
-            <CustomTextInput
-                inputRightIcon={fingerprint}
-                placeholderTextColor = {Colors.placeholderContent}
-                customContainerStyle = {{
-                  marginVertical: Metrics.ratio(15),
-                  width: '100%'
-                }}
-                // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-                // returnKeyType="next"
-                // refrence={createRef.currentPasswordInputRef}
-                enablesReturnKeyAutomaticallly={true}
-                placeholder={'Enter your Pin'}
-                editable={true}
-                // value={currentPassword}
-                // onChangeInput={(value) => setCurrentPassword(value)}
-                // onSubmitRef={createRef.newPasswordInputRef}
-                // onSubmit={(onSubmitRef) => {
-                //   onSubmit(onSubmitRef);
-                // }}
-                // emailError={currentPasswordError}
-              />
+          {renderOtpInput()}
               <Button 
-                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
-                btnText = {"RESEND CODE"}
+                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35), marginTop: Metrics.ratio(15)}}
+                btnText = {AuthString.ButtonText.resendCode}
+                onPress={() => {navigation.navigate(SCREENS.CREATE_PIN)}}
               />
         </View>
       
@@ -101,5 +102,15 @@ const OTP = (props) => {
     </ImageBackground>
   );
 };
+
+
+OTP.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
+};
+
 
 export default OTP;

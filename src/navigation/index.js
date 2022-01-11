@@ -44,7 +44,7 @@ class Navigation extends Component {
       <NavigationContainer>
         <OverlayLoader isLoading={isLoading} />
         {/* user */}
-        {true ? <AppStack /> : <AuthStack />}
+        {false ? <AppStack /> : <AuthStack />}
       </NavigationContainer>
     );
   }

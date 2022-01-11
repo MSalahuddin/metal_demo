@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Image, TextInput, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
-import {Colors} from "../../theme"
+
 const Button = (props) => {
 
   const { 
@@ -11,11 +11,13 @@ const Button = (props) => {
     textStyle,
     leftIcon,
     btnText,
-    rightIcon
+    rightIcon,
+    onPress
   } = props;
 
   return (
     <TouchableOpacity 
+      onPress={onPress}
       style={[styles.btnContainer, customBtnStyle]}>
       <View style = {styles.leftIconContainer}>
         {leftIcon && (
@@ -45,7 +47,8 @@ Button.defaultProps = {
   leftIcon: undefined,
   btnText: undefined,
   textStyle: undefined,
-  rightIcon: undefined
+  rightIcon: undefined,
+  onPress: undefined
 };
 
 Button.propTypes = {
@@ -53,7 +56,8 @@ Button.propTypes = {
   leftIcon: PropTypes.string,
   btnText: PropTypes.string,
   textStyle: PropTypes.object,
-  rightIcon: PropTypes.object
+  rightIcon: PropTypes.object,
+  onPress: PropTypes.func
 };
 
 export default Button;
