@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import {
   CreatePin,
@@ -8,12 +8,13 @@ import {
   UserName,
   EnterPin,
   UserNickName,
-  ScanBiometric
+  ScanBiometric,
+  Onboarding,
 } from '../../containers';
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
-  <AuthStack.Navigator headerMode="none" initialRouteName="ScanBiometric">
+  <AuthStack.Navigator headerMode="none" initialRouteName="Onboarding">
     <AuthStack.Screen name="Login" component={Login} />
     <AuthStack.Screen name="EnterPin" component={EnterPin} />
     <AuthStack.Screen name="OTP" component={OTP} />
@@ -21,7 +22,8 @@ const AuthStackScreen = () => (
     <AuthStack.Screen name="UserName" component={UserName} />
     <AuthStack.Screen name="UserNickName" component={UserNickName} />
     <AuthStack.Screen name="ScanBiometric" component={ScanBiometric} />
-  </AuthStack.Navigator >
+    <AuthStack.Screen name="Onboarding" component={Onboarding} />
+  </AuthStack.Navigator>
 );
 
 export default AuthStackScreen;
