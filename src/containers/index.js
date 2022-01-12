@@ -7,7 +7,7 @@ import UserNickName from './Signin/UserName';
 import ScanBiometric from './ScanBiometric';
 import PhoneNo from './Signup/PhoneNo';
 import Home from './Home';
-import Onboarding from './Onboarding';
+import OnboardingScreen from './Onboarding';
 
 export {
   Login,
@@ -19,5 +19,5 @@ export {
   ScanBiometric,
   PhoneNo,
   Home,
-  Onboarding,
+  OnboardingScreen,
 };

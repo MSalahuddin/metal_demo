@@ -9,14 +9,14 @@ import {
   EnterPin,
   UserNickName,
   ScanBiometric,
-  Onboarding,
+  OnboardingScreen,
   PhoneNo,
 } from '../../containers';
 import {SCREENS} from '../../constant/constant';
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
-  <AuthStack.Navigator headerMode="none" initialRouteName={SCREENS.PHONE_NO}>
+  <AuthStack.Navigator headerMode="none" initialRouteName={SCREENS.ONBOARDING}>
     <AuthStack.Screen name="Login" component={Login} />
     <AuthStack.Screen name={SCREENS.ENTER_PIN} component={EnterPin} />
     <AuthStack.Screen name={SCREENS.OTP} component={OTP} />
@@ -27,7 +27,7 @@ const AuthStackScreen = () => (
     />
     <AuthStack.Screen name="UserNickName" component={UserNickName} />
     <AuthStack.Screen name="ScanBiometric" component={ScanBiometric} />
-    <AuthStack.Screen name="Onboarding" component={Onboarding} />
+    <AuthStack.Screen name={SCREENS.ONBOARDING} component={OnboardingScreen} />
     <AuthStack.Screen name={SCREENS.SCAN_BIOMETRIC} component={ScanBiometric} />
     <AuthStack.Screen name={SCREENS.PHONE_NO} component={PhoneNo} />
   </AuthStack.Navigator>

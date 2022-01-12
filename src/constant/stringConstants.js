@@ -42,13 +42,21 @@ export const AuthString = {
 
     }
 };
+export const onboarding = {
+    invesmentProduct: "INVESMENT PRODUCTS",
+    moneyTransfer: "MONEY TRANFERS",
+    loremipsum: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    skip: "Skip"
+
+};
 
 export const home = {
     wantToday: "What do you want to do today?",
     sendMoney: "Send money",
     investMoney: "Invest money",
     recentTransfer: "Recent Transfers",
-    invesment: "Investment"
+    invesment: "Investment",
+    viewAll: "View all"
 }
 
 export const commonString = {

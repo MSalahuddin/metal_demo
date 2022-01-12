@@ -9,14 +9,15 @@ import Animated, {
 } from 'react-native-reanimated';
 import {PanGestureHandler} from 'react-native-gesture-handler';
 import {snapPoint, useVector} from 'react-native-redash';
-
+import PropTypes from 'prop-types';
 import Wave, {HEIGHT, MARGIN_WIDTH, MIN_LEDGE, Side, WIDTH} from '../Wave';
 import Button from './Button';
 
 const PREV = WIDTH;
 const NEXT = 0;
 
-const Slider = ({index, children, prev, next, setIndex}) => {
+export default Slider = (props) => {
+  const {index, children, prev, next, setIndex} = props;
   const hasPrev = !!prev;
   const hasNext = !!next;
 
@@ -128,4 +129,3 @@ const Slider = ({index, children, prev, next, setIndex}) => {
   );
 };
 
-export default Slider;
