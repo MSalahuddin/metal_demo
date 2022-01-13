@@ -14,6 +14,7 @@ function createRequestTypes(base) {
 
 export const LOGIN = createRequestTypes('LOGIN');
 export const LOGOUT = 'LOGOUT';
+export const DRAWAR_MENU_SWITCHED = "DRAWAR_MENU_SWITCHED";
 
 // network related action type
 export const NETWORK_INFO = "NETWORK_INFO";

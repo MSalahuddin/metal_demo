@@ -14,12 +14,17 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../theme';
 import {  CustomTextInput, Button, Header } from '../../components';
-import { request as login_request } from '../../redux/actions/Login';
+import { drawerMenuSwitched } from '../../redux/actions/NavigationAction';
 import { AuthString } from "../../constant/stringConstants";
 import {background, scan_success} from "../../assets/images";
 import {SCREENS} from "../../constant/constant";
 
 const ScanBiometric = ({navigation}) => {
+  const dispatch = useDispatch();
+
+  const handleNavigation = () => {
+    dispatch(drawerMenuSwitched("", SCREENS.HOME))
+  }
 
   return (
     <ImageBackground
@@ -53,7 +58,7 @@ const ScanBiometric = ({navigation}) => {
           marginBottom: Metrics.screenHeight * 0.1
           }}>
           <Button 
-            onPress={() =>  navigation.navigate(SCREENS.HOME)}
+            onPress={() =>  handleNavigation()}
             btnText = {AuthString.ButtonText.usePassword}
           />
           <Button 
@@ -63,7 +68,7 @@ const ScanBiometric = ({navigation}) => {
             }} 
             textStyle = {{color: Colors.secondaryBtnText}}   
             btnText = {AuthString.ButtonText.cancel}
-            onPress={() =>  navigation.navigate(SCREENS.HOME)}
+            onPress={() =>  handleNavigation()}
             />
         </View>
     </ImageBackground>

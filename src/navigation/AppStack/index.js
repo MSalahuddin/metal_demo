@@ -7,8 +7,6 @@ import {
 } from '../../containers';
 import { SCREENS } from '../../constant/constant';
 
-import {SCREENS} from "../../constant/constant";
-
 const AppStack = createStackNavigator();
 const AppStackScreen = () => {
   return (
