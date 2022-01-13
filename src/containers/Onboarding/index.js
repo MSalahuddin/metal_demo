@@ -11,27 +11,29 @@ import {
 } from '../../assets/images';
 import {Colors, Fonts, Metrics} from "../../theme";
 import {onboarding} from "../../constant/stringConstants";
+import {SCREENS} from "../../constant/constant";
 import Onboarding from 'react-native-onboarding-swiper';
+import PropTypes from 'prop-types';
 
 const slides = [
   {
     color: Colors.white,
-    title: onboarding.invesmentProduct,
+    title: onboarding.moneyTransfer,
     description:
       'Hot or cold, our dessert recipes can turn an average meal into a memorable event',
     picture: first_onboarding,
   },
   {
-    color: '#0090D6',
-    title: 'Healthy Foods',
+    color: Colors.white,
+    title: onboarding.invesmentProduct,
     description:
       'Discover healthy recipes that are easy to do with detailed cooking instructions from top chefs',
     picture: second_onboarding,
   },
 ];
 
-const OnboardingScreen = props => {
-  // const [index, setIndex] = useState(0);
+const OnboardingScreen = ({navigation}) => {
+  const [index, setIndex] = useState(0);
   // const prev = slides[index - 1];
   // const next = slides[index + 1];
   // return (
@@ -176,6 +178,14 @@ const OnboardingScreen = props => {
     )
   }
 
+  const handleNext = () => {
+    if(index < 1 ){
+      setIndex(index + 1);
+    }else{
+      navigation.navigate(SCREENS.ENTER_PIN)
+    }
+  }
+
   return(
     <View style = {{flex: 1, flexDirection: "row"}}>
       <View>
@@ -215,6 +225,7 @@ const OnboardingScreen = props => {
         }}
         source={onboarding_bg}>
          <TouchableOpacity 
+            onPress={()=> handleNext()}
            style = {{
             marginTop: "auto",
             alignItems:"center",
@@ -231,6 +242,14 @@ const OnboardingScreen = props => {
 
     </View>
   )
+};
+
+OnboardingScreen.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
 };
 
 export default OnboardingScreen;

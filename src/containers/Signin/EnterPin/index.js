@@ -11,8 +11,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
-import {  Colors, Metrics, Fonts} from '../../../theme';
-import {  CustomTextInput, Button, Logo, Form } from '../../../components';
+import { Colors, Metrics, Fonts} from '../../../theme';
+import { CustomTextInput, Button } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
 import {
   bg_half, 
@@ -100,7 +100,7 @@ const EnterPin = ({navigation}) => {
               <Button 
                 customBtnStyle={{width: "100%", }} 
                 btnText = {AuthString.ButtonText.login}
-                onPress={() => {navigation.navigate(SCREENS.SCAN_BIOMETRIC)}}/>
+                onPress={() => {navigation.navigate(SCREENS.ENTER_USER_NAME)}}/>
              
               <Text style = {
                   {

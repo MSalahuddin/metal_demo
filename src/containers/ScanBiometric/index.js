@@ -9,6 +9,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../theme';
@@ -16,8 +17,9 @@ import {  CustomTextInput, Button, Header } from '../../components';
 import { request as login_request } from '../../redux/actions/Login';
 import { AuthString } from "../../constant/stringConstants";
 import {background, scan_success} from "../../assets/images";
+import {SCREENS} from "../../constant/constant";
 
-const ScanBiometric = (props) => {
+const ScanBiometric = ({navigation}) => {
 
   return (
     <ImageBackground
@@ -51,17 +53,29 @@ const ScanBiometric = (props) => {
           marginBottom: Metrics.screenHeight * 0.1
           }}>
           <Button 
-                  btnText = {AuthString.ButtonText.usePassword}/>
+            onPress={() =>  navigation.navigate(SCREENS.HOME)}
+            btnText = {AuthString.ButtonText.usePassword}
+          />
           <Button 
             customBtnStyle = {{
               marginTop: Metrics.ratio(20),
               backgroundColor: Colors.secondaryBtn
             }} 
             textStyle = {{color: Colors.secondaryBtnText}}   
-            btnText = {AuthString.ButtonText.cancel}/>
+            btnText = {AuthString.ButtonText.cancel}
+            onPress={() =>  navigation.navigate(SCREENS.HOME)}
+            />
         </View>
     </ImageBackground>
   );
+};
+
+ScanBiometric.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
 };
 
 export default ScanBiometric;

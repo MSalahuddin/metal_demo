@@ -9,14 +9,14 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../../theme';
 import {  CustomTextInput, Button } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
 import {bg_half, background, transparent_logo} from "../../../assets/images";
-
-const UserNickName = (props) => {
+import {SCREENS} from "../../../constant/constant";
+const UserNickName = ({navigation}) => {
   const dispatch = useDispatch();
 
   return (
@@ -86,12 +86,21 @@ const UserNickName = (props) => {
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
                 btnText = {AuthString.ButtonText.create}
+                onPress={() => {navigation.navigate(SCREENS.SCAN_BIOMETRIC)}}
               />
         </View>
       
       </ImageBackground>
     </ImageBackground>
   );
+};
+
+UserNickName.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
 };
 
 export default UserNickName;

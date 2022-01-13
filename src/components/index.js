@@ -7,6 +7,7 @@ import Slide from './Slide';
 import Wave from './Wave';
 import OTPInput from './OTPInput';
 import CarouselSlider from './CarouselSlider';
+import CountryPickerModal from "./CountryPickerModal";
 export {
   Button,
   Header,
@@ -16,5 +17,6 @@ export {
   Slide,
   Wave,
   OTPInput,
-  CarouselSlider
+  CarouselSlider,
+  CountryPickerModal
 };

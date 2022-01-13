@@ -12,10 +12,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../../theme';
-import {  CustomTextInput, Button, Logo, Form } from '../../../components';
+import {  CustomTextInput, Button, CountryPickerModal } from '../../../components';
 import { request as login_request } from '../../redux/actions/../Login';
 import { AuthString } from "../../../constant/stringConstants";
-import {bg_half, background, transparent_logo, avatar, fingerprint, transparent_fingure} from "../../../assets/images";
+import {bg_half, background, transparent_logo } from "../../../assets/images";
 import {
   SCREENS
 } from "../../../constant/constant";
@@ -57,7 +57,7 @@ const PhoneNo = ({navigation}) => {
             marginTop: Metrics.ratio(20)
            }
           }>{AuthString.PhoneNo.letStart}</Text>
-         
+            {/* <CountryPickerModal/> */}
             <CustomTextInput
                 placeholderTextColor = {Colors.placeholderContent}
                 customContainerStyle = {{
