@@ -26,6 +26,8 @@ const windowTintWhite = "rgba(255, 255, 255, 0.1)";
 const transparent = "rgba(0,0,0,0)";
 const cornflowerBlue = "#009DDD0D";
 const mantle_grey = "#8D9390";
+const orange_text = "#EF9C55";
+const green_text = "#00D832";
 // app theme colors
 
 // ====================================================
@@ -49,5 +51,7 @@ export default {
   transparent,
   underlineColor,
   cornflowerBlue,
-  mantle_grey
+  mantle_grey,
+  orange_text,
+  green_text
 };

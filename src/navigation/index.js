@@ -7,7 +7,7 @@ import AppStack from './AppStack';
 import util from '../util';
 import {logout} from '../redux/actions/Login';
 
-import {OverlayLoader} from '../components';
+// import {OverlayLoader} from '../components';
 
 class Navigation extends Component {
   constructor() {
@@ -42,7 +42,7 @@ class Navigation extends Component {
 
     return (
       <NavigationContainer>
-        <OverlayLoader isLoading={isLoading} />
+        {/* <OverlayLoader isLoading={isLoading} /> */}
         {/* user */}
         {false ? <AppStack /> : <AuthStack />}
       </NavigationContainer>

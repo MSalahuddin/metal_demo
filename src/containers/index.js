@@ -8,6 +8,7 @@ import ScanBiometric from "./ScanBiometric";
 import PhoneNo from "./Signup/PhoneNo";
 import Home from "./Home";
 import SelectPurpose from "./SelectPurpose";
+import OnboardingScreen from './Onboarding';
 export {
     Login,
     OTP,
@@ -18,5 +19,6 @@ export {
     ScanBiometric,
     PhoneNo,
     Home,
-    SelectPurpose
+    SelectPurpose,
+    OnboardingScreen,
 }
