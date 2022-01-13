@@ -7,7 +7,7 @@ import UserNickName from "./Signin/UserName";
 import ScanBiometric from "./ScanBiometric";
 import PhoneNo from "./Signup/PhoneNo";
 import Home from "./Home";
-
+import SelectPurpose from "./SelectPurpose";
 export {
     Login,
     OTP,
@@ -17,5 +17,6 @@ export {
     UserNickName,
     ScanBiometric,
     PhoneNo,
-    Home
+    Home,
+    SelectPurpose
 }

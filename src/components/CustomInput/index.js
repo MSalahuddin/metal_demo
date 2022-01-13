@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { View, Image, TextInput, TouchableOpacity, Text } from 'react-native';
 // import {Text} from '../index';
 import styles from './styles';
-import { Colors, Fonts }from "../../theme";
+import { Colors, Fonts } from "../../theme";
 
 export default class CustomTextInput extends React.Component {
   // state = {secureentry:"true" }
@@ -82,7 +82,7 @@ export default class CustomTextInput extends React.Component {
     } = this.props;
 
     return (
-      <View style = {customContainerStyle}>
+      <View style={customContainerStyle}>
         <View style={[styles.InputView, customInputStyle]}>
           {inputLeftIcon && (
             <Image
@@ -90,6 +90,7 @@ export default class CustomTextInput extends React.Component {
               resizeMode="contain"
               source={inputLeftIcon}
             />
+          
           )}
           <TextInput
             secureTextEntry={this.state.sec}
@@ -106,15 +107,16 @@ export default class CustomTextInput extends React.Component {
             onSubmitEditing={() => {
               onSubmit(onSubmitRef);
             }}
+            underlineColorAndroid="transparent"
           />
-          
-            <Image
-              style={styles.rightIcon}
-              resizeMode="contain"
-              source={
-               inputRightIcon 
-              }
-            />
+
+          <Image
+            style={styles.rightIcon}
+            resizeMode="contain"
+            source={
+              inputRightIcon
+            }
+          />
         </View>
         <Text style={styles.errormsg}> {emailError}</Text>
       </View>
