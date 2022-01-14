@@ -89,7 +89,6 @@ const UserNickName = ({navigation}) => {
                 onPress={() => {navigation.navigate(SCREENS.SCAN_BIOMETRIC)}}
               />
         </View>
-      
       </ImageBackground>
     </ImageBackground>
   );

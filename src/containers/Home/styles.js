@@ -31,8 +31,8 @@ export default StyleSheet.create({
     marginLeft: Metrics.ratio(7)
   },
   carouselContainer: {
-    height: Metrics.screenHeight * 0.2,
-    backgroundColor: Colors.secondaryBtn
+    height: Metrics.screenHeight * 0.25,
+    backgroundColor: Colors.secondaryBtn,
   },
   selectButon: {
     height: Metrics.screenHeight * 0.11,

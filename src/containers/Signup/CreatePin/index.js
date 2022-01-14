@@ -19,22 +19,28 @@ import {bg_half, background, transparent_logo, avatar, fingerprint, transparent_
 import {SCREENS} from "../../../constant/constant";
 
 const CreatePin = ({navigation}) => {
-  const [otpNumber, setOtpNumber] = useState('');
+  const [pin, setPin] = useState('');
 
-  const handleVerifyOtp = async otpNumber => {
-    // navigation.navigate('SignUpPassword', { data: {last_name:'Hussain Ahmad'} })
+
+  const createPin = async pin => {
+    handleNavigate()
   };
 
-  const renderOtpInput = () => {
+  // handle navigation
+  const handleNavigate = () =>{
+    navigation.navigate(SCREENS.CREATE_USER_NAME)
+  };
+
+  const renderPinInput = () => {
     return(
       <OTPInput
-                textInputValue={otpNumber}
+                textInputValue={pin}
                 pinCount = {4}
-                onChangeText={otpNumber => setOtpNumber(otpNumber)}
+                onChangeText={pin => setPin(pin)}
                 underlineStyleBase={styles.underlineStyleBase}
                 underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
-                handleVerifyOtp={otpNumber => {
-                    handleVerifyOtp(otpNumber);
+                handleVerifyOtp={pin => {
+                  createPin(pin);
                 }}
       />
     )
@@ -84,12 +90,12 @@ const CreatePin = ({navigation}) => {
             textAlign: "center"
            }
           }>{AuthString.CreatePin.desc}</Text>
-            {renderOtpInput()}
+            {renderPinInput()}
           
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35), marginTop: Metrics.ratio(15)}}
                 btnText = {AuthString.ButtonText.create}
-                onPress={() => {navigation.navigate(SCREENS.CREATE_USER_NAME)}}
+                onPress={() => handleNavigate()}
               />
         </View>
       </ImageBackground>

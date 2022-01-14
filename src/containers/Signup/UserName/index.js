@@ -23,9 +23,19 @@ let errors = {
 };
 
 const CreateUserName = ({navigation}) => {
+  const [nickName, setNickName] = useState(null)
   const dispatch = useDispatch();
 
   const loginResponse = useSelector((state) => state.login);
+
+  // on submit phone no
+  const onSubmit = () => {
+    handleNavigate()
+  };
+  // handle navigation
+  const handleNavigate = () =>{
+    navigation.navigate(SCREENS.ONBOARDING)
+  };
 
   return (
     <ImageBackground
@@ -79,23 +89,23 @@ const CreateUserName = ({navigation}) => {
                   width: '100%'
                 }}
                 // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-                // returnKeyType="next"
+                returnKeyType="done"
                 // refrence={createRef.currentPasswordInputRef}
                 enablesReturnKeyAutomaticallly={true}
                 placeholder={AuthString.placeholder.nickName}
                 editable={true}
-                // value={currentPassword}
-                // onChangeInput={(value) => setCurrentPassword(value)}
+                value={nickName}
+                onChangeInput={(value) => setNickName(value)}
                 // onSubmitRef={createRef.newPasswordInputRef}
-                // onSubmit={(onSubmitRef) => {
-                //   onSubmit(onSubmitRef);
-                // }}
+                onSubmit={() => {
+                  onSubmit();
+                }}
                 // emailError={currentPasswordError}
               />
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
                 btnText = {AuthString.ButtonText.create}
-                onPress={() => {navigation.navigate(SCREENS.ONBOARDING)}}
+                onPress={() => handleNavigate()}
               />
         </View>
       

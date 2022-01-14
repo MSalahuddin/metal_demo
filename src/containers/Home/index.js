@@ -9,7 +9,7 @@ import {
   Animated,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../theme';
 import {  CarouselSlider, Button, Header } from '../../components';
@@ -29,90 +29,9 @@ import {
 } from "../../assets/images";
 
 
+const RenderListTab = (listData) => {
 
-const Home = (props) => {
-  const promoBannerOpacity = new Animated.Value(1);
-  const [recentTransfer, setRecentTransfer] = useState([
-    {name: "Ann-Marita", data: "Dec 15, 2021, 7:15 AM", amount: "$1,000.00", image: avatar3},
-    {name: "Brooke Hogan", data: "Nov 16, 2021, 10:46 AM", amount: "$500.00", image: avatar2}
-  ]);
-
-  const onPromoCardPress = () => {
-    Animated.timing(promoBannerOpacity, {
-        toValue: 0,
-        duration: 1000,
-        useNativeDriver: true
-    }).start(() => {});//setIsPromoCardVisible(false), setUserGuidePromoCode(false)
-  };
-
-  const renderCarousel = (props) => {
-    return(
-      <View style = {styles.carouselContainer}>
-        <Animated.View style={{ opacity: promoBannerOpacity }}>
-          <CarouselSlider
-            bannerImages = {[banner]}
-          />
-                          {/* <PromoCard
-                              isClosable
-                              data={gameRoomPromoData}
-                              onClose={onPromoCardPress}
-                              onPress={(i) => {
-                                  setPromoIndex(i)
-                                  openPromoInfo(OPEN_PROMO_LOCATIONS.GAME_ROOM_HEADER)
-                              }}
-                          /> */}
-        </Animated.View>
-      </View>
-    )
-  }
-  
-  const renderSelection = (props) => {
-    return(
-      <View style ={{marginHorizontal: Metrics.screenWidth * 0.05}}>
-         <Text style = 
-          {{
-            fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.eighteen,
-            color: Colors.secondaryBtnText,
-            marginTop: Metrics.ratio(10)
-          }}>
-            {home.wantToday}
-          </Text>
-          <View style = {{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            marginVertical: Metrics.ratio(20)
-            }}>
-            <TouchableOpacity style = {styles.selectButon}>
-              <Image style = {{width: Metrics.ratio(27), height: Metrics.ratio(27)}} source={send_money}/> 
-              <Text style = {
-              {
-                fontFamily: Fonts.type.RobotoRegular,
-                fontSize: Fonts.size.fourteen,
-                color: Colors.mantle_grey,
-                marginTop: Metrics.ratio(8)
-             }
-            }>{home.sendMoney}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style = {styles.selectButon}>
-              <Image style = {{width: Metrics.ratio(27), height: Metrics.ratio(27)}} source={Invest_money}/> 
-              <Text style = {
-              {
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.fourteen,
-              color: Colors.mantle_grey,
-              marginTop: Metrics.ratio(8)
-             }
-            }>{home.investMoney}</Text>
-            </TouchableOpacity>
-          </View>
-      </View>
-    )
-  }
-  
   const renderListItem = ({name, date, amount, image}) => {
-
     return(
       <View style = {{
         flexDirection: "row",
@@ -149,8 +68,8 @@ const Home = (props) => {
               {
               fontFamily: Fonts.type.RobotoRegular,
               fontSize: Fonts.size.fourteen,
-              color: Colors.greyContent,
-              marginTop: Metrics.ratio(3)
+              color: Colors.placeholderContentWithOpacity,
+              marginTop: Metrics.ratio(3),
              }
             }>{date}</Text>
           </View>
@@ -169,22 +88,98 @@ const Home = (props) => {
     );
   };
 
-  const renderListTab = () => {
-    return(
-      <View style = {{backgroundColor: Colors.white,}}>
-        {recentTransfer.map((data) => renderListItem(data)) }
-        <TouchableOpacity style = {{
-           alignItems: "center",
-           marginVertical: Metrics.ratio(10)
+  return(
+    <View style = {{backgroundColor: Colors.white,}}>
+      {listData.map((data) => renderListItem(data)) }
+      <TouchableOpacity style = {{
+         alignItems: "center",
+         marginVertical: Metrics.ratio(10)
+      }}>
+        <Text style = {{
+          color: Colors.primaryBtn,
+          fontSize: Fonts.size.thirteen,
+          fontFamily: Fonts.type.RobotoRegular
         }}>
-          <Text style = {{
-            color: Colors.primaryBtn,
-            fontSize: Fonts.size.thirteen,
-            fontFamily: Fonts.type.RobotoRegular
+          {home.viewAll}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const Home = ({navigation}) => {
+  const promoBannerOpacity = new Animated.Value(1);
+  const [recentTransfer, setRecentTransfer] = useState([
+    {name: "Ann-Marita", date: "Dec 15, 2021, 7:15 AM", amount: "$1,000.00", image: avatar3},
+    {name: "Brooke Hogan", date: "Nov 16, 2021, 10:46 AM", amount: "$500.00", image: avatar2}
+  ]);
+  const [routeIndex, setRouteIndex] = useState(0);
+
+  const onPromoCardPress = () => {
+    Animated.timing(promoBannerOpacity, {
+        toValue: 0,
+        duration: 1000,
+        useNativeDriver: true
+    }).start(() => {});//setIsPromoCardVisible(false), setUserGuidePromoCode(false)
+  };
+
+  const renderCarousel = (props) => {
+    return(
+      <View style = {styles.carouselContainer}>
+        <Animated.View style={{ opacity: promoBannerOpacity }}>
+          <CarouselSlider
+            bannerImages = {[banner]}
+          />
+        </Animated.View>
+      </View>
+    )
+  }
+  
+  const renderSelection = ({navigation}) => {
+    return(
+      <View style ={{marginHorizontal: Metrics.screenWidth * 0.05}}>
+         <Text style = 
+          {{
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.eighteen,
+            color: Colors.secondaryBtnText,
+            marginTop: Metrics.ratio(10)
           }}>
-            {home.viewAll}
+            {home.wantToday}
           </Text>
-        </TouchableOpacity>
+          <View style = {{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            marginVertical: Metrics.ratio(20)
+            }}>
+            <TouchableOpacity style = {styles.selectButon}>
+              <Image style = {{
+                // width: Metrics.ratio(27), height: Metrics.ratio(27)
+                }} source={send_money}/> 
+              <Text style = {
+              {
+                fontFamily: Fonts.type.RobotoMedium,
+                fontSize: Fonts.size.thirteen,
+                color: Colors.mantle_grey,
+                marginTop: Metrics.ratio(8)
+             }
+            }>{home.sendMoney}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.selectButon}>
+              <Image style = {{
+                // width: Metrics.ratio(27), height: Metrics.ratio(27)
+                }} source={Invest_money}/> 
+              <Text style = {
+              {
+              fontFamily: Fonts.type.RobotoMedium,
+              fontSize: Fonts.size.thirteen,
+              color: Colors.mantle_grey,
+              marginTop: Metrics.ratio(8)
+             }
+            }>{home.investMoney}</Text>
+            </TouchableOpacity>
+          </View>
       </View>
     )
   }
@@ -220,8 +215,8 @@ const Home = (props) => {
              <View style = {{alignItems: "center",}}>
               <Image 
               style = {{
-                width: Metrics.ratio(25),
-                height: Metrics.ratio(25),
+                // width: Metrics.ratio(10),
+                // height: Metrics.ratio(10),
               }}
               resizeMethod='auto' 
               resizeMode= 'contain' 
@@ -229,7 +224,7 @@ const Home = (props) => {
               />
               <Text style = {{
                 fontFamily: Fonts.type.RobotoRegular,
-                fontSize: Fonts.size.fifteen,
+                fontSize: Fonts.size.thirteen,
                 color: Colors.mantle_grey
                 }}>{item.name}</Text>
            </View>
@@ -237,6 +232,49 @@ const Home = (props) => {
       </View>
     )
   }
+
+  const FirstRoute = (navigation) => {
+    return (
+      <RenderListTab
+        data = {recentTransfer}
+        handleNavigation={handleNavigation}
+        navigation={navigation}
+      />
+    );
+  };
+
+  const  SecondRoute = (navigation) => {
+    return (
+      <RenderListTab
+        data = {recentTransfer}
+        handleNavigation={handleNavigation}
+        navigation={navigation}
+      />
+    );
+  };
+
+  const renderTab = (navigation) => {
+    return(
+      <CustomTabView
+        renderScene={{
+          RecentTransfer: FirstRoute,
+          Invesment: SecondRoute,
+        }}
+      onChangeIndex={index =>
+          setRouteIndex(index)
+      }
+      route={route}
+      handleLeftTabButton={() => setRouteIndex(0)}
+      handleRightTabButton={() => setRouteIndex(1)}
+      leftButtonText={home.recentTransfer}
+      rightButtonText={home.invesment}
+      activeNavigation={true}
+      routeIndex={routeIndex}
+    />
+    )
+  };
+
+
 
   return (
     <View style = {styles.container}>
@@ -277,10 +315,19 @@ const Home = (props) => {
       </View>
       {renderCarousel()}
       {renderSelection()}
-      {renderListTab()}
+      {renderTab(navigation)}
+      {/* {renderListTab(navigation)} */}
       {renderBottom()}
     </View>
   );
+};
+
+Home.propTypes = {
+  navigation: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.bool
+  }).isRequired
 };
 
 export default Home;

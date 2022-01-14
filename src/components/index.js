@@ -8,6 +8,7 @@ import Wave from './Wave';
 import OTPInput from './OTPInput';
 import CarouselSlider from './CarouselSlider';
 import CountryPickerModal from "./CountryPickerModal";
+import CustomTabView from './TabView';
 export {
   Button,
   Header,
@@ -18,5 +19,6 @@ export {
   Wave,
   OTPInput,
   CarouselSlider,
-  CountryPickerModal
+  CountryPickerModal,
+  CustomTabView
 };
