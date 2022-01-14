@@ -40,6 +40,7 @@ const CreateUserName = ({navigation}) => {
         <View style = {{
            backgroundColor: Colors.white,
            width: Metrics.screenWidth * 0.85,
+           height: Metrics.screenHeight * 0.45,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
            alignItems: 'center',
@@ -72,7 +73,7 @@ const CreateUserName = ({navigation}) => {
            }
           }>{AuthString.UserName.enterName}</Text>
             <CustomTextInput
-                placeholderTextColor = {Colors.placeholderContent}
+                placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
                   marginVertical: Metrics.ratio(15),
                   width: '100%'
@@ -94,7 +95,7 @@ const CreateUserName = ({navigation}) => {
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
                 btnText = {AuthString.ButtonText.create}
-                onPress={() => {navigation.navigate(SCREENS.ENTER_PIN)}}
+                onPress={() => {navigation.navigate(SCREENS.ONBOARDING)}}
               />
         </View>
       

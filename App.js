@@ -120,8 +120,8 @@ export default class App extends Component {
     );
     AppState.addEventListener('change', this._handleAppStateChange);
     // languageInitialize();
-    setJSExceptionHandler(this.errorHandler, true);
-    setNativeExceptionHandler(this.nativeErrorCallback, false);
+    // setJSExceptionHandler(this.errorHandler, true);
+    // setNativeExceptionHandler(this.nativeErrorCallback, false);
   };
 
   render() {

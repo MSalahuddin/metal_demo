@@ -34,7 +34,8 @@ export default class CustomTextInput extends React.Component {
     CustomTextInputStyle: PropTypes.object,
     underlineColor: PropTypes.string,
     fontStyle: PropTypes.object,
-    customContainerStyle: PropTypes.object
+    customContainerStyle: PropTypes.object,
+    placeholderTextColor: PropTypes.string
   };
 
   static defaultProps = {
@@ -55,7 +56,8 @@ export default class CustomTextInput extends React.Component {
     TextInputPaddingStyle: undefined,
     CustomTextInputStyle: undefined,
     underlineColor: Colors.underlineColor,
-    customContainerStyle: undefined
+    customContainerStyle: undefined,
+    placeholderTextColor: undefined
   };
 
   render() {
@@ -77,6 +79,7 @@ export default class CustomTextInput extends React.Component {
       customInputStyle,
       TextInputPaddingStyle,
       customContainerStyle,
+      placeholderTextColor,
       // CustomTextInputStyle,
       secureTextEntry,
     } = this.props;
@@ -93,6 +96,7 @@ export default class CustomTextInput extends React.Component {
           
           )}
           <TextInput
+            placeholderTextColor={placeholderTextColor}
             secureTextEntry={this.state.sec}
             returnKeyType={returnKeyType}
             enablesReturnKeyAutomaticallly={enablesReturnKeyAutomaticallly}

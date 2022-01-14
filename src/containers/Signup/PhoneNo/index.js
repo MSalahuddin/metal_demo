@@ -35,6 +35,7 @@ const PhoneNo = ({navigation}) => {
         <Image style = {{marginVertical: Metrics.screenHeight * 0.1}} source={transparent_logo}/>
         <View style = {{
            backgroundColor: Colors.white,
+           height: Metrics.screenHeight * 0.45,
            width: Metrics.screenWidth * 0.85,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
@@ -59,7 +60,7 @@ const PhoneNo = ({navigation}) => {
           }>{AuthString.PhoneNo.letStart}</Text>
             {/* <CountryPickerModal/> */}
             <CustomTextInput
-                placeholderTextColor = {Colors.placeholderContent}
+                placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
                   marginVertical: Metrics.ratio(15),
                   width: '100%'

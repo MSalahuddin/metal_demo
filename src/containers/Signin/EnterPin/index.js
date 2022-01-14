@@ -73,12 +73,12 @@ const EnterPin = ({navigation}) => {
             fontFamily: Fonts.type.RobotoRegular,
             fontSize: Fonts.size.fourteen,
             color: Colors.placeholderContent,
-            marginTop: Metrics.ratio(40)
+            marginTop: Metrics.ratio(50)
            }
           }>NAZLIHAN GUNAYLER</Text>
             <CustomTextInput
                 inputRightIcon={fingerprint}
-                placeholderTextColor = {Colors.placeholderContent}
+                placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
                   marginVertical: Metrics.ratio(15),
                   width: "100%",

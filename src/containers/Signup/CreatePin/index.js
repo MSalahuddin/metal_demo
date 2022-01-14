@@ -53,6 +53,7 @@ const CreatePin = ({navigation}) => {
         <View style = {{
            backgroundColor: Colors.white,
            width: Metrics.screenWidth * 0.85,
+           height: Metrics.screenHeight * 0.45,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
            alignItems: 'center',

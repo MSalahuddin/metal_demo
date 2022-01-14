@@ -64,7 +64,7 @@ const UserNickName = ({navigation}) => {
             }>{AuthString.UserName.heading}</Text>
            </View>
             <CustomTextInput
-                placeholderTextColor = {Colors.placeholderContent}
+                placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
                   marginVertical: Metrics.ratio(10),
                   width: '100%'
