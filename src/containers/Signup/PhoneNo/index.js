@@ -35,8 +35,8 @@ const PhoneNo = ({navigation}) => {
         <Image style = {{marginVertical: Metrics.screenHeight * 0.1}} source={transparent_logo}/>
         <View style = {{
            backgroundColor: Colors.white,
-           height: Metrics.screenHeight * 0.45,
            width: Metrics.screenWidth * 0.85,
+           height: Metrics.screenHeight * 0.45,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
            alignItems: 'center',
@@ -80,7 +80,7 @@ const PhoneNo = ({navigation}) => {
                 // emailError={currentPasswordError}
               />
               <Button 
-                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
+                customBtnStyle = {{width: '100%', }}
                 btnText = {AuthString.ButtonText.continue}
                 onPress={() => {navigation.navigate(SCREENS.OTP)}}
               />

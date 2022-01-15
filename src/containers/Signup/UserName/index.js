@@ -93,9 +93,9 @@ const CreateUserName = ({navigation}) => {
                 // emailError={currentPasswordError}
               />
               <Button 
-                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
+                customBtnStyle = {{width: '100%'}}
                 btnText = {AuthString.ButtonText.create}
-                onPress={() => {navigation.navigate(SCREENS.ONBOARDING)}}
+                onPress={() => {navigation.navigate(SCREENS.OTP, {isLoggedIn: true })}}
               />
         </View>
       

@@ -87,7 +87,7 @@ const CreatePin = ({navigation}) => {
             {renderOtpInput()}
           
               <Button 
-                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35), marginTop: Metrics.ratio(15)}}
+                customBtnStyle = {{width: '100%'}}
                 btnText = {AuthString.ButtonText.create}
                 onPress={() => {navigation.navigate(SCREENS.CREATE_USER_NAME)}}
               />

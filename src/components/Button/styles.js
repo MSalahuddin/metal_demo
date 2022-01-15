@@ -20,6 +20,8 @@ export default StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2.27,
     elevation: 3,
+    marginTop: "auto",
+    marginBottom: Metrics.ratio(35)
   },
   leftIconContainer: {
     width: Metrics.ratio(30),

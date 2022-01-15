@@ -33,7 +33,8 @@ export const AuthString = {
         usePassword: "Use Password",
         cancel: "Cancel",
         continue: "CONTINUE",
-        resendCode: "RESEND CODE"
+        resendCode: "RESEND CODE",
+        scanYourFingerPrint: 'Scan your fingerprint'
         
     },
     ScanBiometric: {
