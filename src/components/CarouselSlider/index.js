@@ -19,12 +19,12 @@ const CarouselSlider = (props) => {
             onCurrentImagePressed={(i) => {
               // onPress(i)
             }}
-            resizeMode='cover'
-            
+            resizeMethod={'auto'}
+            resizeMode={'contain'}
             // eslint-disable-next-line react-native/no-inline-styles
             ImageComponentStyle={{
-              height:'100%',
-              justifyContent:'center'
+              height: "100%"
+              // justifyContent:'center'
             }}
            
             sliderBoxHeight={100}

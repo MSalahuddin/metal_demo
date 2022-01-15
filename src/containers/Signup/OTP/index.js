@@ -29,7 +29,12 @@ const OTP = ({ navigation, route: { params } }) => {
   const [otpNumber, setOtpNumber] = useState('');
 
   const handleVerifyOtp = async otpNumber => {
-    // navigation.navigate('SignUpPassword', { data: {last_name:'Hussain Ahmad'} })
+    handleNavigate()
+  };
+
+  // handle navigation
+  const handleNavigate = () => {
+    navigation.navigate(SCREENS.CREATE_PIN)
   };
 
   const renderOtpInput = () => {
@@ -123,9 +128,9 @@ const OTP = ({ navigation, route: { params } }) => {
             if you not received OTP tap on resend button click
           </Text>}
           <Button
-            customBtnStyle={{ width: '100%',marginTop: Metrics.ratio (10),}}
+            customBtnStyle={{ width: '100%', marginBottom: Metrics.ratio(35), marginTop: Metrics.ratio(15) }}
             btnText={AuthString.ButtonText.resendCode}
-            onPress={() => { navigation.navigate(SCREENS.CREATE_PIN) }}
+            onPress={() => handleNavigate()}
           />
 
 

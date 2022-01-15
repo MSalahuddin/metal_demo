@@ -22,6 +22,17 @@ import {
 
 const PhoneNo = ({navigation}) => {
   const [phoneNo, setPhoneNo] = useState("");
+  
+  // on submit phone no
+  const onSubmit = () => {
+    handleNavigate()
+  };
+
+  // handle navigation
+  const handleNavigate = () =>{
+    navigation.navigate(SCREENS.OTP)
+  };
+
 
   return (
     <ImageBackground
@@ -66,23 +77,24 @@ const PhoneNo = ({navigation}) => {
                   width: '100%'
                 }}
                 // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-                // returnKeyType="next"
+                // onSubmitRef={createRef.newPasswordInputRef}
                 // refrence={createRef.currentPasswordInputRef}
+                returnKeyType="done"
                 enablesReturnKeyAutomaticallly={true}
                 placeholder={AuthString.placeholder.mobileNo}
                 editable={true}
-                // value={currentPassword}
+                value={phoneNo}
                 onChangeInput={(value) => setPhoneNo(value)}
-                // onSubmitRef={createRef.newPasswordInputRef}
-                // onSubmit={(onSubmitRef) => {
-                //   onSubmit(onSubmitRef);
-                // }}
+                keyboardType = {'phone-pad'}
+                onSubmit={() => {
+                  onSubmit();
+                }}
                 // emailError={currentPasswordError}
               />
               <Button 
                 customBtnStyle = {{width: '100%', }}
                 btnText = {AuthString.ButtonText.continue}
-                onPress={() => {navigation.navigate(SCREENS.OTP)}}
+                onPress={() => handleNavigate()}
               />
         </View>
       

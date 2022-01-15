@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import { Colors, Metrics, Fonts} from '../../../theme';
-import { CustomTextInput, Button } from '../../../components';
+import { OTPInput, Button } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
 import {
   bg_half, 
@@ -32,7 +32,33 @@ let errors = {
 };
 
 const EnterPin = ({navigation}) => {
-  const dispatch = useDispatch();
+
+ const dispatch = useDispatch();
+ const [pin, setPin] = useState('');
+
+  const createPin = async pin => {
+    handleNavigate()
+  };
+
+  // handle navigation
+  const handleNavigate = () =>{
+    navigation.navigate(SCREENS.ENTER_USER_NAME)
+  };
+
+  const renderPinInput = () => {
+    return(
+      <OTPInput
+        textInputValue={pin}
+        pinCount = {4}
+        onChangeText={pin => setPin(pin)}
+        underlineStyleBase={styles.underlineStyleBase}
+        underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
+        handleVerifyOtp={pin => {
+          createPin(pin);
+        }}
+      />
+    )
+  }
 
   return (
     <ImageBackground
@@ -76,31 +102,11 @@ const EnterPin = ({navigation}) => {
             marginTop: Metrics.ratio(50)
            }
           }>NAZLIHAN GUNAYLER</Text>
-            <CustomTextInput
-                inputRightIcon={fingerprint}
-                placeholderTextColor = {Colors.greyContent}
-                customContainerStyle = {{
-                  marginVertical: Metrics.ratio(15),
-                  width: "100%",
-                }}
-                // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-                // returnKeyType="next"
-                // refrence={createRef.currentPasswordInputRef}
-                enablesReturnKeyAutomaticallly={true}
-                placeholder={AuthString.placeholder.pin}
-                editable={true}
-                // value={currentPassword}
-                // onChangeInput={(value) => setCurrentPassword(value)}
-                // onSubmitRef={createRef.newPasswordInputRef}
-                // onSubmit={(onSubmitRef) => {
-                //   onSubmit(onSubmitRef);
-                // }}
-                // emailError={currentPasswordError}
-              />
+           {renderPinInput()}
               <Button 
                 customBtnStyle={{width: "100%", }} 
                 btnText = {AuthString.ButtonText.login}
-                onPress={() => {navigation.navigate(SCREENS.ENTER_USER_NAME)}}/>
+                onPress={() => handleNavigate()}/>
              
               <Text style = {
                   {

@@ -28,6 +28,7 @@ const cornflowerBlue = "#009DDD0D";
 const mantle_grey = "#8D9390";
 const orange_text = "#EF9C55";
 const green_text = "#00D832";
+const placeholderContentWithOpacity = "rgba(32, 49, 82, 0.55)";
 // app theme colors
 
 // ====================================================
@@ -53,5 +54,6 @@ export default {
   cornflowerBlue,
   mantle_grey,
   orange_text,
-  green_text
+  green_text,
+  placeholderContentWithOpacity
 };
