@@ -16,6 +16,7 @@ import { DataHelper } from './src/helpers';
 import Utils from './src/util';
 import NetworkInfo from './src/services/NetworkInfo';
 import { networkInfoListener } from './src/redux/actions/NetworkInfoActions';
+import SplashScreen from 'react-native-splash-screen';
 // import { languageInitialize } from './src/I18n';
 // import SplashScreen from 'react-native-splash-screen';
 
@@ -125,7 +126,7 @@ export default class App extends Component {
   };
 
   render() {
-    // SplashScreen.hide();
+    SplashScreen.hide();
 
     return (
       <Provider store={this.state.store}>

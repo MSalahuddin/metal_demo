@@ -13,6 +13,7 @@ import java.util.List;
 
 import com.facebook.react.bridge.JSIModulePackage; // react native reanimated
 import com.swmansion.reanimated.ReanimatedJSIModulePackage; // react native reanimated
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
