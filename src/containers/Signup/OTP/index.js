@@ -15,7 +15,7 @@ import { Images, Colors, Metrics, Fonts } from '../../../theme';
 import { CustomTextInput, Button, OTPInput } from '../../../components';
 import { request as login_request } from '../../../redux/actions/Login';
 import { AuthString } from "../../../constant/stringConstants";
-import { bg_half, background, transparent_logo } from "../../../assets/images";
+import { login_bg, background, transparent_logo } from "../../../assets/images";
 import { SCREENS } from "../../../constant/constant";
 
 let errors = {
@@ -34,7 +34,8 @@ const OTP = ({ navigation, route: { params } }) => {
 
   // handle navigation
   const handleNavigate = () => {
-    navigation.navigate(SCREENS.CREATE_PIN)
+    const screenName = !!params?.isLoggedIn ? SCREENS.SCAN_BIOMETRIC : SCREENS.CREATE_PIN
+    navigation.navigate(screenName)
   };
 
   const renderOtpInput = () => {
@@ -54,13 +55,18 @@ const OTP = ({ navigation, route: { params } }) => {
   return (
     <ImageBackground
       style={styles.container}
-      source={background}>
-      <ImageBackground
+      source={login_bg}>
+      {/* <ImageBackground
         blurRadius={3}
         style={styles.image}
         source={bg_half}
-      >
-        <Image style={{ marginVertical: Metrics.screenHeight * 0.1 }} source={transparent_logo} />
+      > */}
+      {/* marginVertical: Metrics.screenHeight * 0.1  */}
+        <Image style={{ 
+          width: Metrics.ratio(200),
+          height: Metrics.ratio(60),
+          bottom: Metrics.ratio(60),
+        }} source={transparent_logo} />
         <View style={{
           backgroundColor: Colors.white,
           width: Metrics.screenWidth * 0.85,
@@ -136,7 +142,7 @@ const OTP = ({ navigation, route: { params } }) => {
 
         </View>
 
-      </ImageBackground>
+      {/* </ImageBackground> */}
     </ImageBackground>
   );
 };

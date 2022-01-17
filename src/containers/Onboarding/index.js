@@ -180,10 +180,10 @@ const OnboardingScreen = ({ navigation }) => {
 
   const handleNext = () => {
     if (index < 1) {
-      navigation.navigate(SCREENS.ENTER_PIN)
+      navigation.navigate(SCREENS.PHONE_NO)
       // setIndex(index + 1);
     } else {
-      navigation.navigate(SCREENS.ENTER_PIN)
+      navigation.navigate(SCREENS.PHONE_NO)
     }
   }
 

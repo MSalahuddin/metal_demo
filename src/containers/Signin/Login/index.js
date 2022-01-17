@@ -12,10 +12,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './styles';
 import { Colors, Metrics, Fonts} from '../../../theme';
-import { CustomTextInput, Button, Logo, Form, EnterYourPassword } from '../../../components';
+import { CustomTextInput, Button, Logo, OTPInput, EnterYourPassword } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
-import { bg_half, background, transparent_logo, avatar, fingerprint, transparent_fingure } from "../../../assets/images";
-
+import { login_bg, transparent_logo, avatar, fingerprint, transparent_fingure } from "../../../assets/images";
+import {SCREENS} from "../../../constant/constant"
 let errors = {
   emailErr: 'Invalid email address.',
   passwordErr:
@@ -23,21 +23,48 @@ let errors = {
 };
 
 const Login = (props) => {
-  const dispatch = useDispatch();
+  const [pin, setPin] = useState('');
 
-  const loginResponse = useSelector((state) => state.login);
+
+  const createPin = async pin => {
+    handleNavigate()
+  };
+
+  // handle navigation
+  const handleNavigate = () =>{
+    navigation.navigate(SCREENS.CREATE_USER_NAME)
+  };
+
+  const renderPinInput = () => {
+    return(
+      <OTPInput
+                textInputValue={pin}
+                pinCount = {4}
+                onChangeText={pin => setPin(pin)}
+                underlineStyleBase={styles.underlineStyleBase}
+                underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
+                handleVerifyOtp={pin => {
+                  createPin(pin);
+                }}
+      />
+    )
+  }
 
   return (
       <>
       <ImageBackground
         style={styles.container}
-        source={background}>
-        <ImageBackground
+        source={login_bg}>
+        {/* <ImageBackground
           blurRadius={3}
           style={styles.image}
           source={bg_half}
-        >
-          <Image style = {{marginVertical: Metrics.screenHeight * 0.1}} source={transparent_logo}/>
+        > */}
+          <Image style = {{
+              width: Metrics.ratio(200),
+              height: Metrics.ratio(60),
+              bottom: Metrics.ratio(60),
+          }} source={transparent_logo}/>
           <View style = {{
             backgroundColor: Colors.white,
             width: Metrics.screenWidth * 0.85,
@@ -69,28 +96,8 @@ const Login = (props) => {
                 color: Colors.placeholderContent,
                 marginTop: Metrics.ratio(40)
               }
-            }>NAZLIHAN GUNAYLER</Text>
-            <CustomTextInput
-              inputRightIcon={fingerprint}
-              placeholderTextColor = {Colors.placeholderContent}
-              customContainerStyle = {{
-                marginVertical: Metrics.ratio(15),
-                width: "100%",
-              }}
-              // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-              // returnKeyType="next"
-              // refrence={createRef.currentPasswordInputRef}
-              enablesReturnKeyAutomaticallly={true}
-              placeholder={AuthString.placeholder.pin}
-              editable={true}
-            // value={currentPassword}
-            // onChangeInput={(value) => setCurrentPassword(value)}
-            // onSubmitRef={createRef.newPasswordInputRef}
-            // onSubmit={(onSubmitRef) => {
-            //   onSubmit(onSubmitRef);
-            // }}
-            // emailError={currentPasswordError}
-            />
+            }>Lola</Text>
+            {renderPinInput()}
             <Button
               customBtnStyle={{width: "100%",}}
               leftIcon = {transparent_fingure}
@@ -112,7 +119,7 @@ const Login = (props) => {
               btnText = {AuthString.Signin.loginWithOtherAccount}/>
           </View>
 
-        </ImageBackground>  
+        {/* </ImageBackground>   */}
       </ImageBackground>
        <EnterYourPassword />
       </>

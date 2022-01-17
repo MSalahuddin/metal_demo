@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   metalsContainer: {
     flexDirection: "row",
-    backgroundColor: Colors.cornflowerBlue,
+    backgroundColor: Colors.primaryBtn,
     paddingVertical: Metrics.ratio(7),
     paddingHorizontal: Metrics.ratio(7),
     borderRadius: Metrics.ratio(20),
@@ -25,13 +25,13 @@ export default StyleSheet.create({
     marginLeft: "auto"
   },
   tokenCount: {
-    color: Colors.primaryBtn,
+    color: Colors.white,
     fontFamily: Fonts.type.RobotoRegular,
     fontSize: Fonts.size.fourteen,
     marginLeft: Metrics.ratio(7)
   },
   carouselContainer: {
-    height: Metrics.screenHeight * 0.25,
+    height: Metrics.screenHeight * 0.35,
     backgroundColor: Colors.secondaryBtn,
   },
   selectButon: {

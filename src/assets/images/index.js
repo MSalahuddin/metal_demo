@@ -22,6 +22,9 @@ const profile_icon = require("./profile.png");
 const help_icon = require("./help.png");
 const onboarding_bg = require("./onboarding/Onboarding_bg.png");
 const left_circle = require("./left_circle.png");
+const united_states = require("./united_states.png");
+const down_arrow = require("./down_arrow.png");
+const login_bg = require("./background_images/login_bg.png")
 export {
     bg_half,
     background,
@@ -46,5 +49,8 @@ export {
     help_icon,
     profile_icon,
     onboarding_bg,
-    left_circle
+    left_circle,
+    united_states,
+    down_arrow,
+    login_bg
 }

@@ -7,12 +7,13 @@ import {
   ScrollView,
   Image,
   Animated,
+  ImageBackground,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../theme';
-import {  CarouselSlider, Button, Header } from '../../components';
+import {  CarouselSlider, CustomTabView, Header } from '../../components';
 import { request as login_request } from '../../redux/actions/Login';
 import { commonString, home } from "../../constant/stringConstants";
 import {
@@ -114,6 +115,13 @@ const Home = ({navigation}) => {
     {name: "Brooke Hogan", date: "Nov 16, 2021, 10:46 AM", amount: "$500.00", image: avatar2}
   ]);
   const [routeIndex, setRouteIndex] = useState(0);
+  const route = {
+    index: routeIndex,
+    routes: [
+      { key: "RecentTransfer" , title: home.recentTransfer },
+      { key: "Invesment", title: home.investMoney },
+    ],
+  };
 
   const onPromoCardPress = () => {
     Animated.timing(promoBannerOpacity, {
@@ -123,19 +131,54 @@ const Home = ({navigation}) => {
     }).start(() => {});//setIsPromoCardVisible(false), setUserGuidePromoCode(false)
   };
 
-  const renderCarousel = (props) => {
+  const renderCarousel = () => {
     return(
-      <View style = {styles.carouselContainer}>
-        <Animated.View style={{ opacity: promoBannerOpacity }}>
+      <ImageBackground source={banner}  style = {styles.carouselContainer}>
+        {/* <Animated.View style={{ opacity: promoBannerOpacity }}>
           <CarouselSlider
             bannerImages = {[banner]}
           />
-        </Animated.View>
+        </Animated.View> */}
+        <View style = {{
+        flexDirection: "row",
+        marginTop: Metrics.ratio(30),
+        height: Metrics.screenHeight * 0.095,
+        alignItems: "center",
+        marginHorizontal: Metrics.screenWidth * 0.05
+      }}>
+        <View style = {{
+          width: Metrics.ratio(40),
+          height: Metrics.ratio(40),
+          }}
+        >
+          <Image 
+            resizeMode= 'contain' 
+            resizeMethod='auto' 
+            style = {{
+            width: Metrics.ratio(40),
+            height: Metrics.ratio(40),
+            }} 
+            source={avatar}/>
+        </View>
+        <Text style = 
+        {{
+          fontFamily: Fonts.type.RobotoRegular,
+          fontSize: Fonts.size.xLarge,
+          color: Colors.secondaryBtnText,
+          marginHorizontal: Metrics.ratio(10)
+        }}>
+          {commonString.hi} Lola!
+        </Text>
+        <View style = {styles.metalsContainer}>
+            <Image source={metal_icon}/>
+            <Text style = {styles.tokenCount}>150 Metals</Text>
+        </View>
       </View>
+      </ImageBackground>
     )
-  }
+  };
   
-  const renderSelection = ({navigation}) => {
+  const renderSelection = () => {
     return(
       <View style ={{marginHorizontal: Metrics.screenWidth * 0.05}}>
          <Text style = 
@@ -182,7 +225,7 @@ const Home = ({navigation}) => {
           </View>
       </View>
     )
-  }
+  };
 
   const renderBottom = () => {
     const tabs = [
@@ -253,7 +296,7 @@ const Home = ({navigation}) => {
     );
   };
 
-  const renderTab = (navigation) => {
+  const renderTab = () => {
     return(
       <CustomTabView
         renderScene={{
@@ -278,44 +321,10 @@ const Home = ({navigation}) => {
 
   return (
     <View style = {styles.container}>
-      <View style = {{
-        flexDirection: "row",
-        marginTop: Metrics.ratio(30),
-        height: Metrics.screenHeight * 0.095,
-        alignItems: "center",
-        marginHorizontal: Metrics.screenWidth * 0.05
-      }}>
-        <View style = {{
-          width: Metrics.ratio(40),
-          height: Metrics.ratio(40),
-          }}
-        >
-          <Image 
-            resizeMode= 'contain' 
-            resizeMethod='auto' 
-            style = {{
-            width: Metrics.ratio(40),
-            height: Metrics.ratio(40),
-            }} 
-            source={avatar}/>
-        </View>
-        <Text style = 
-        {{
-          fontFamily: Fonts.type.RobotoRegular,
-          fontSize: Fonts.size.xLarge,
-          color: Colors.secondaryBtnText,
-          marginHorizontal: Metrics.ratio(10)
-        }}>
-          {commonString.hi} Lola!
-        </Text>
-        <View style = {styles.metalsContainer}>
-            <Image source={metal_icon}/>
-            <Text style = {styles.tokenCount}>150 Metals</Text>
-        </View>
-      </View>
+      
       {renderCarousel()}
       {renderSelection()}
-      {renderTab(navigation)}
+      {/* {renderTab(navigation)} */}
       {/* {renderListTab(navigation)} */}
       {renderBottom()}
     </View>
