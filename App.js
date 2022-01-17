@@ -118,7 +118,7 @@ export default class App extends Component {
       this.state.store.dispatch,
       networkInfoListener,
     );
-    AppState.addEventListener('change', this._handleAppStateChange);
+    // AppState.addEventListener('change', this._handleAppStateChange);
     // languageInitialize();
     // setJSExceptionHandler(this.errorHandler, true);
     // setNativeExceptionHandler(this.nativeErrorCallback, false);
