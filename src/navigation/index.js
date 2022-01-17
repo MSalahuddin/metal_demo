@@ -18,12 +18,11 @@ class Navigation extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    console.log("🚀 ~ file: index.js ~ line 21 ~ Navigation ~ getDerivedStateFromProps ~ prevState", prevState)
     console.log(nextProps?.navigation,'nextPropsnextProps')
-    if(nextProps?.navigation){
-      if(nextProps?.navigation?.newView === SCREENS.HOME){
+      if( nextProps.navigation.newView === SCREENS.HOME){
         return{newView: nextProps?.navigation?.newView}
       }
-    }
     // if (
     //   prevState.login?.data?.id !== nextProps.login?.data?.id &&
     //   nextProps?.login?.data?.data?.isActive
@@ -53,7 +52,7 @@ class Navigation extends Component {
         {/* <OverlayLoader isLoading={isLoading} /> */}
         {/* user */}
         {/* newView === SCREENS.HOME */}
-        { false ? <AppStack /> : <AuthStack />}
+        { newView === SCREENS.HOME ? <AppStack /> : <AuthStack />}
       </NavigationContainer>
     );
   }

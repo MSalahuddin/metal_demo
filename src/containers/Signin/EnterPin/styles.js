@@ -22,8 +22,8 @@ export default StyleSheet.create({
      alignItems: 'center',
  },
  underlineStyleBase: {
-  width: 30,
-  height: 45,
+  width: 40,
+  height: 40,
   borderWidth: 0,
   borderBottomWidth: Metrics.ratio(2),
   borderColor:Colors.greyContent,

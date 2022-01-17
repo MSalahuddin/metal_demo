@@ -17,12 +17,7 @@ import { request as login_request } from '../../../redux/actions/Login';
 import { AuthString } from "../../../constant/stringConstants";
 import { login_bg, background, transparent_logo } from "../../../assets/images";
 import { SCREENS } from "../../../constant/constant";
-
-let errors = {
-  emailErr: 'Invalid email address.',
-  passwordErr:
-    'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
-};
+import { HeadingText } from "../Resources";
 
 const OTP = ({ navigation, route: { params } }) => {
   const dispatch = useDispatch();
@@ -40,16 +35,18 @@ const OTP = ({ navigation, route: { params } }) => {
 
   const renderOtpInput = () => {
     return (
-      <OTPInput
-        textInputValue={otpNumber}
-        pinCount={4}
-        onChangeText={otpNumber => setOtpNumber(otpNumber)}
-        underlineStyleBase={styles.underlineStyleBase}
-        underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
-        handleVerifyOtp={otpNumber => {
-          handleVerifyOtp(otpNumber);
-        }}
-      />
+      <View style = {{ alignItems: "center"}}>
+        <OTPInput
+          textInputValue={otpNumber}
+          pinCount={4}
+          onChangeText={otpNumber => setOtpNumber(otpNumber)}
+          underlineStyleBase={styles.underlineStyleBase}
+          underlineStyleHighLighted={[styles.underlineStyleHighLighted]}
+          handleVerifyOtp={otpNumber => {
+            handleVerifyOtp(otpNumber);
+          }}
+        />
+      </View>
     )
   }
   return (
@@ -62,85 +59,77 @@ const OTP = ({ navigation, route: { params } }) => {
         source={bg_half}
       > */}
       {/* marginVertical: Metrics.screenHeight * 0.1  */}
-        <Image style={{ 
-          width: Metrics.ratio(200),
-          height: Metrics.ratio(60),
-          bottom: Metrics.ratio(60),
-        }} source={transparent_logo} />
-        <View style={{
-          backgroundColor: Colors.white,
-          width: Metrics.screenWidth * 0.85,
-          paddingHorizontal: Metrics.screenWidth * 0.07,
-          borderRadius: 15,
-          alignItems: 'center',
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 5,
-          },
-          shadowOpacity: 0.34,
-          shadowRadius: 6.27,
-          elevation: 10,
-        }}>
+      <Image style={{
+        width: Metrics.ratio(200),
+        height: Metrics.ratio(60),
+        bottom: Metrics.ratio(60),
+      }} source={transparent_logo} />
 
-          <Text style={
-            {
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.eighteen,
-              color: Colors.placeholderContent,
-              marginTop: Metrics.ratio(20)
-            }
-          }>OTP</Text>
+      <View style={{
+        backgroundColor: Colors.white,
+        width: Metrics.screenWidth * 0.85,
+        height: Metrics.screenHeight * 0.41,
+        paddingHorizontal: Metrics.screenWidth * 0.07,
+        borderRadius: 15,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        elevation: 10,
+      }}>
+        <HeadingText
+          text={AuthString.OTP.heading}
+        />
+        <Text style={
+          {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.sixteen,
+            color: Colors.greyContent,
+            marginTop: Metrics.ratio(30),
+            textAlign: "center",
+            lineHeight: Metrics.ratio(25)
+          }
+        }>{!!params?.isLoggedIn ?
+          "Please enter verification code that was sent to your mobile number" :
+          "Please enter verification code that was sent to your mobile number"}
+        </Text>
 
-          <Text style={
-            {
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.sixteen,
-              color: Colors.greyContent,
-              marginTop: Metrics.ratio(20),
-              textAlign: "center",
-              lineHeight: Metrics.ratio(20)
-            }
-          }>{!!params?.isLoggedIn ?
-            "Please enter verification code that was sent to your mobile number" :
-            "Please enter verification code that was sent to your mobile number"}
-          </Text>
+        {!!params?.isLoggedIn && <Text style={
+          {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.sixteen,
+            color: Colors.primaryBtn,
+          }
+        }>
+          34*-***-**81
+        </Text>}
 
-          {!!params?.isLoggedIn && <Text style={
-            {
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.sixteen,
-              color: Colors.primaryBtn,
-            }
-          }>
-            34*-***-**81
-          </Text>}
+        {renderOtpInput()}
 
-
-
-
-          {renderOtpInput()}
-
-          {!!params?.isLoggedIn && <Text style={
-            {
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.sixteen,
-              color: Colors.greyContent,
-              marginTop: Metrics.ratio(20),
-              textAlign: "center",
-              lineHeight: Metrics.ratio(20)
-            }
-          }>
-            if you not received OTP tap on resend button click
-          </Text>}
-          <Button
-            customBtnStyle={{ width: '100%', marginBottom: Metrics.ratio(35), marginTop: Metrics.ratio(15) }}
-            btnText={AuthString.ButtonText.resendCode}
-            onPress={() => handleNavigate()}
-          />
+        {!!params?.isLoggedIn && <Text style={
+          {
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.sixteen,
+            color: Colors.greyContent,
+            marginTop: Metrics.ratio(20),
+            textAlign: "center",
+            lineHeight: Metrics.ratio(20)
+          }
+        }>
+          if you not received OTP tap on resend button click
+        </Text>}
+        <Button
+          customBtnStyle={{ width: '100%' }}
+          btnText={AuthString.ButtonText.next}
+          onPress={() => handleNavigate()}
+        />
 
 
-        </View>
+      </View>
 
       {/* </ImageBackground> */}
     </ImageBackground>

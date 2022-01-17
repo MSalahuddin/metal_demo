@@ -13,7 +13,9 @@ export const AuthString = {
         createYourPin: "Create your PIN",
         desc: "Please enter a PIN to login every time quickly."
     },
-
+    OTP: {
+        heading: "OTP"
+    },
     Signin: {
         enterPinNumber:  "Please enter your PIN number",
         forgotPassword: "Forgot your password?",

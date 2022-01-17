@@ -1,6 +1,6 @@
 // @flow
 import React, { useState } from 'react';
-import { View, Image, ImageBackground, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Image, ImageBackground, Text, TouchableOpacity, SafeAreaView, StatusBar } from "react-native";
 import { Slider, Slide } from '../../components';
 import {
   first_onboarding,
@@ -180,70 +180,69 @@ const OnboardingScreen = ({ navigation }) => {
 
   const handleNext = () => {
     if (index < 1) {
-      navigation.navigate(SCREENS.PHONE_NO)
+      navigation.navigate(SCREENS.CREATE_USER_NAME)
       // setIndex(index + 1);
     } else {
-      navigation.navigate(SCREENS.PHONE_NO)
+      navigation.navigate(SCREENS.CREATE_USER_NAME)
     }
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, }}>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <View>
-          {renderHeader()}
-          <View style={{ alignItems: "center" }}>
-            <Image
-              resizeMethod='auto'
-              style={{
-                height: Metrics.screenHeight * 0.3,
-                width: Metrics.screenWidth * 0.77,
-                right: Metrics.ratio(-10)
-              }} source={first_onboarding} />
-          </View>
-          <View style={{
-            width: Metrics.screenWidth * 0.7,
-            marginTop: "auto",
-            bottom: Metrics.screenHeight * 0.1,
-            marginHorizontal: Metrics.ratio(20)
-          }}>
-            <Text style={{
-              fontFamily: Fonts.type.RobotoBold,
-              fontSize: Fonts.size.xLarge,
-              color: Colors.mainHeading
-            }}>{onboarding.moneyTransfer}</Text>
-            <Text style={{
-              fontFamily: Fonts.type.RobotoRegular,
-              fontSize: Fonts.size.eighteen,
-              color: Colors.headingContent,
-              marginTop: Metrics.ratio(15)
-            }}>{onboarding.loremipsum}</Text>
-          </View>
+    <View style={{ flex: 1, flexDirection: "row" }}>
+      <StatusBar translucent backgroundColor='transparent' />
+      <View>
+        {renderHeader()}
+        <View style={{ alignItems: "center" }}>
+          <Image
+            resizeMethod='auto'
+            style={{
+              height: Metrics.screenHeight * 0.3,
+              width: Metrics.screenWidth * 0.77,
+              right: Metrics.ratio(-10)
+            }} source={first_onboarding} />
         </View>
-        <View style={{ marginLeft: "auto" }}>
-          <ImageBackground style={{
-            height: Metrics.screenHeight,
-            width: Metrics.screenWidth * 0.19
-          }}
-            source={onboarding_bg}>
-            <TouchableOpacity
-              onPress={() => handleNext()}
-              style={{
-                marginTop: "auto",
-                alignItems: "center",
-                bottom: Metrics.screenHeight * 0.17,
-              }}>
-              <Image
-                resizeMode='contain'
-                resizeMethod='auto'
-                source={left_circle}
-              />
-            </TouchableOpacity>
-          </ImageBackground>
+        <View style={{
+          width: Metrics.screenWidth * 0.7,
+          marginTop: "auto",
+          bottom: Metrics.screenHeight * 0.1,
+          marginHorizontal: Metrics.ratio(20)
+        }}>
+          <Text style={{
+            fontFamily: Fonts.type.RobotoBold,
+            fontSize: Fonts.size.xLarge,
+            color: Colors.mainHeading
+          }}>{onboarding.moneyTransfer}</Text>
+          <Text style={{
+            fontFamily: Fonts.type.RobotoRegular,
+            fontSize: Fonts.size.eighteen,
+            color: Colors.headingContent,
+            marginTop: Metrics.ratio(15)
+          }}>{onboarding.loremipsum}</Text>
         </View>
-
       </View>
-    </SafeAreaView>
+      <View style={{ marginLeft: "auto" }}>
+        <ImageBackground style={{
+          flex: 1,
+          width: Metrics.screenWidth * 0.2
+        }}
+          source={onboarding_bg}>
+          <TouchableOpacity
+            onPress={() => handleNext()}
+            style={{
+              marginTop: "auto",
+              alignItems: "center",
+              bottom: Metrics.screenHeight * 0.19,
+            }}>
+            <Image
+              resizeMode='contain'
+              resizeMethod='auto'
+              source={left_circle}
+            />
+          </TouchableOpacity>
+        </ImageBackground>
+      </View>
+
+    </View>
   )
 };
 

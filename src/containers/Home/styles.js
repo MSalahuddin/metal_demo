@@ -11,8 +11,9 @@ export default StyleSheet.create({
   metalsContainer: {
     flexDirection: "row",
     backgroundColor: Colors.primaryBtn,
-    paddingVertical: Metrics.ratio(7),
-    paddingHorizontal: Metrics.ratio(7),
+    paddingHorizontal: Metrics.ratio(10),
+    height: Metrics.ratio(30),
+    alignItems: "center",
     borderRadius: Metrics.ratio(20),
     shadowColor: '#000',
     shadowOffset: {

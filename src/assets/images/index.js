@@ -24,7 +24,12 @@ const onboarding_bg = require("./onboarding/Onboarding_bg.png");
 const left_circle = require("./left_circle.png");
 const united_states = require("./united_states.png");
 const down_arrow = require("./down_arrow.png");
-const login_bg = require("./background_images/login_bg.png")
+const login_bg = require("./background_images/login_bg.png");
+const fingerprint_black =  require("./fingerprint_black.png");
+const home_selected = require("./home_selected.png");
+const metal_wihte_icon = require("./metal_wihte_icon.png");
+const check_icon = require("./check_icon.png");
+const in_process_icon = require("./in_process_icon.png");
 export {
     bg_half,
     background,
@@ -52,5 +57,10 @@ export {
     left_circle,
     united_states,
     down_arrow,
-    login_bg
+    login_bg,
+    fingerprint_black,
+    home_selected,
+    metal_wihte_icon,
+    check_icon,
+    in_process_icon
 }

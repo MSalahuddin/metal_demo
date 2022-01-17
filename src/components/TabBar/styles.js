@@ -1,20 +1,20 @@
 // @flow
 import {StyleSheet} from 'react-native';
-import {Metrics, Fonts} from '../../theme';
+import {Metrics, Fonts, Colors} from '../../theme';
 
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: "white",
-    elevation: 4
+    backgroundColor: Colors.grey,
+    borderBottomColor: Colors.greyContent,
+    borderBottomWidth: Metrics.ratio(2)
   },
   button: {
-    width: Metrics.screenWidth * 0.5,
+    width: Metrics.screenWidth * 0.4,
     padding: Metrics.ratio(16),
   },
   buttonText: {
-    fontSize: Metrics.ratio(16),
-    fontFamily: Fonts.type.bold,
+    fontSize: Fonts.size.fourteen,
+    fontFamily: Fonts.type.RobotoBold,
   },
 });

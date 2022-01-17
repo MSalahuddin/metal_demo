@@ -20,9 +20,9 @@ const TabBar = (props) => {
         {!singleTabStyle && <TouchableOpacity
           style={[
             styles.button,
-            {
-              borderBottomColor: isActive ? Colors.primary : Colors.homeText,
-              borderBottomWidth: isActive ? Metrics.ratio(4) : Metrics.ratio(0),
+            { 
+              borderBottomColor: isActive ? Colors.primaryBtn : Colors.greyContent,
+              borderBottomWidth: isActive ? Metrics.ratio(2) : Metrics.ratio(0),
             },
           ]}
           onPress={leftButtonPress}>
@@ -32,7 +32,7 @@ const TabBar = (props) => {
               // eslint-disable-next-line react-native/no-inline-styles
               {
                 textAlign: 'center',
-                color: isActive ? Colors.homeText : Colors.primary,
+                color: isActive ? Colors.primaryBtn : Colors.greyContent,
               },
             ]}>
             {leftButtonText}
@@ -42,8 +42,8 @@ const TabBar = (props) => {
           style={[
             styles.button,
             {
-              borderBottomColor: !isActive ? Colors.primary : Colors.homeText,
-              borderBottomWidth: !isActive ? Metrics.ratio(4) : Metrics.ratio(0),
+              borderBottomColor: !isActive ? Colors.primaryBtn : Colors.greyContent,
+              borderBottomWidth: !isActive ? Metrics.ratio(2) : Metrics.ratio(0),
             },
             singleTabStyle && { width: Metrics.screenWidth }
           ]}
@@ -55,8 +55,8 @@ const TabBar = (props) => {
               {
                 textAlign: 'center',
                 color: !isActive
-                  ? Colors.homeText
-                  : Colors.primary,
+                  ? Colors.primaryBtn
+                  : Colors.greyContent,
               },
             ]}>
             {rightButtonText}
