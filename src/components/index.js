@@ -8,6 +8,7 @@ import Wave from './Wave';
 import OTPInput from './OTPInput';
 import CarouselSlider from './CarouselSlider';
 import CountryPickerModal from "./CountryPickerModal";
+import EnterYourPassword from './EnterYourPassword';
 import CustomTabView from './TabView';
 export {
   Button,
@@ -20,5 +21,6 @@ export {
   OTPInput,
   CarouselSlider,
   CountryPickerModal,
-  CustomTabView
+  EnterYourPassword,
+  CustomTabView,
 };

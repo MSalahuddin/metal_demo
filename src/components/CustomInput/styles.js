@@ -5,7 +5,7 @@ import { Fonts, Metrics, Colors } from '../../theme';
 export default StyleSheet.create({
   InputView: {
     // width: Metrics.screenWidth * 0.7,
-    height: Metrics.ratio(50),
+    height: Metrics.ratio(40),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     fontFamily: Fonts.type.RobotoRegular,
     color: Colors.placeholderContent,
     fontSize: Fonts.size.eighteen,
-    paddingHorizontal: Metrics.ratio(3),
+    // paddingHorizontal: Metrics.ratio(3),
     paddingTop: Metrics.ratio(10)
   },
   inputIcon: {

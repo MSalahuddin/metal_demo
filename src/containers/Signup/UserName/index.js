@@ -8,49 +8,38 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import { Images, Colors, Metrics, Fonts} from '../../../theme';
-import {  CustomTextInput, Button, Logo, Form } from '../../../components';
+import {  CustomTextInput, Button } from '../../../components';
 import { AuthString } from "../../../constant/stringConstants";
-import {bg_half, background, transparent_logo} from "../../../assets/images";
-import { SCREENS } from "../../../constant/constant";
-let errors = {
-  emailErr: 'Invalid email address.',
-  passwordErr:
-    'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
-};
-
+import {login_bg, background, transparent_logo} from "../../../assets/images";
+import {SCREENS} from "../../../constant/constant";
 const CreateUserName = ({navigation}) => {
-  const [nickName, setNickName] = useState(null)
   const dispatch = useDispatch();
-
-  const loginResponse = useSelector((state) => state.login);
-
-  // on submit phone no
-  const onSubmit = () => {
-    handleNavigate()
-  };
-  // handle navigation
-  const handleNavigate = () =>{
-    navigation.navigate(SCREENS.ONBOARDING)
-  };
 
   return (
     <ImageBackground
     style={styles.container}
-    source={background}>
-      <ImageBackground
+    source={login_bg}>
+      {/* <ImageBackground
           blurRadius={3}
           style={styles.image}
           source={bg_half}
-      >
-        <Image style = {{marginVertical: Metrics.screenHeight * 0.1}} source={transparent_logo}/>
+      > */}
+      {/* marginVertical: Metrics.screenHeight * 0.1 */}
+        <Image style = {{
+          width: Metrics.ratio(200),
+          height: Metrics.ratio(60),
+          bottom: Metrics.ratio(60),
+        }} 
+        // resizeMethod = 'auto' 
+        // resizeMode= 'contain' 
+        source={transparent_logo}/>
         <View style = {{
            backgroundColor: Colors.white,
            width: Metrics.screenWidth * 0.85,
-           height: Metrics.screenHeight * 0.45,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
            alignItems: 'center',
@@ -67,49 +56,50 @@ const CreateUserName = ({navigation}) => {
           <Text style = {
             {
             fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.eighteen,
+            fontSize: Fonts.size.xLarge,
             color: Colors.placeholderContent,
             marginTop: Metrics.ratio(20)
            }
-          }>{AuthString.UserName.heading}</Text>
-           <Text style = {
-            {
-            fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.eighteen,
-            color: Colors.greyContent,
-            marginTop: Metrics.ratio(20),
-            textAlign: "center",
-            lineHeight: Metrics.ratio(20)
-           }
-          }>{AuthString.UserName.enterName}</Text>
+          }>{AuthString.Signin.userGreeting}</Text>
+           <View style = {{width: "100%"}}>
+            <Text style = {
+              {
+              fontFamily: Fonts.type.RobotoRegular,
+              fontSize: Fonts.size.sixteen,
+              color: Colors.mantle_grey,
+              marginTop: Metrics.ratio(20),
+            }
+            }>{AuthString.UserName.heading}</Text>
+           </View>
             <CustomTextInput
                 placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
-                  marginVertical: Metrics.ratio(15),
-                  width: '100%'
+                  // marginVertical: Metrics.ratio(10),
+                  width: '100%',
+                  
+                  // backgroundColor: "red"
                 }}
                 // TextInputPaddingStyle={styles.TextInputPaddingStyle}
-                returnKeyType="done"
+                // returnKeyType="next"
                 // refrence={createRef.currentPasswordInputRef}
                 enablesReturnKeyAutomaticallly={true}
-                placeholder={AuthString.placeholder.nickName}
+                placeholder={AuthString.placeholder.enterNickName}
                 editable={true}
-                value={nickName}
-                onChangeInput={(value) => setNickName(value)}
+                // value={currentPassword}
+                // onChangeInput={(value) => setCurrentPassword(value)}
                 // onSubmitRef={createRef.newPasswordInputRef}
-                onSubmit={() => {
-                  onSubmit();
-                }}
+                // onSubmit={(onSubmitRef) => {
+                //   onSubmit(onSubmitRef);
+                // }}
                 // emailError={currentPasswordError}
               />
               <Button 
                 customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
-                btnText = {AuthString.ButtonText.create}
-                onPress={() => handleNavigate()}
+                btnText = {AuthString.ButtonText.next}
+                onPress={() => {navigation.navigate(SCREENS.ENTER_PIN)}}
               />
         </View>
-      
-      </ImageBackground>
+      {/* </ImageBackground> */}
     </ImageBackground>
   );
 };

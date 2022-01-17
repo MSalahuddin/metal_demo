@@ -88,7 +88,7 @@ export default class CustomTextInput extends React.Component {
     } = this.props;
 
     return (
-      <View style={customContainerStyle}>
+      <View style={[customContainerStyle]}>
         <View style={[styles.InputView, customInputStyle]}>
           {inputLeftIcon && (
             <Image

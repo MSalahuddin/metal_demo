@@ -15,7 +15,7 @@ import { Images, Colors, Metrics, Fonts} from '../../../theme';
 import {  CustomTextInput, Button, CountryPickerModal } from '../../../components';
 import { request as login_request } from '../../redux/actions/../Login';
 import { AuthString } from "../../../constant/stringConstants";
-import {bg_half, background, transparent_logo } from "../../../assets/images";
+import {login_bg, background, transparent_logo, united_states, down_arrow } from "../../../assets/images";
 import {
   SCREENS
 } from "../../../constant/constant";
@@ -37,17 +37,22 @@ const PhoneNo = ({navigation}) => {
   return (
     <ImageBackground
     style={styles.container}
-    source={background}>
-      <ImageBackground
+    source={login_bg}>
+      {/* <ImageBackground
           blurRadius={3}
           style={styles.image}
           source={bg_half}
-      >
-        <Image style = {{marginVertical: Metrics.screenHeight * 0.1}} source={transparent_logo}/>
+      > */}
+      {/* marginVertical: Metrics.screenHeight * 0.1 */}
+        <Image style = {{
+          width: Metrics.ratio(200),
+          height: Metrics.ratio(60),
+          bottom: Metrics.ratio(60),
+        }} source={transparent_logo}/>
         <View style = {{
            backgroundColor: Colors.white,
-           height: Metrics.screenHeight * 0.45,
            width: Metrics.screenWidth * 0.85,
+          //  height: Metrics.screenHeight * 0.45,
            paddingHorizontal: Metrics.screenWidth * 0.07,
            borderRadius: 15,
            alignItems: 'center',
@@ -64,12 +69,39 @@ const PhoneNo = ({navigation}) => {
           <Text style = {
             {
             fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.eighteen,
+            fontSize: Fonts.size.large,
             color: Colors.placeholderContent,
-            marginTop: Metrics.ratio(20)
+            marginTop: Metrics.ratio(30)
            }
           }>{AuthString.PhoneNo.letStart}</Text>
             {/* <CountryPickerModal/> */}
+            <View style = {{width: "100%", marginTop: Metrics.ratio(30)}}>
+              <View style = {{
+                // height: Metrics.ratio(40),
+                paddingBottom: Metrics.ratio(10),
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                borderBottomWidth: 1,
+                borderBottomColor: Colors.underlineColor,
+              }}>
+               <View style = {{flexDirection: "row"}}>
+                <Text style = {{
+                    fontFamily: Fonts.type.RobotoRegular,
+                    fontSize: Fonts.size.large,
+                    color: Colors.greyContent,
+                  }}>+1</Text> 
+                  <Image style = {{
+                    marginLeft: Metrics.ratio(10),
+                    width: Metrics.ratio(30),
+                    height: Metrics.ratio(20)
+                    }} source={united_states}/>
+                </View>
+                <Image style = {{
+                  marginLeft: Metrics.ratio(10),
+                  }} source={down_arrow}/>
+              </View>
+            </View>
             <CustomTextInput
                 placeholderTextColor = {Colors.greyContent}
                 customContainerStyle = {{
@@ -92,13 +124,13 @@ const PhoneNo = ({navigation}) => {
                 // emailError={currentPasswordError}
               />
               <Button 
-                customBtnStyle = {{width: '100%', marginBottom: Metrics.ratio(35)}}
-                btnText = {AuthString.ButtonText.continue}
+                customBtnStyle = {{width: '100%', }}
+                btnText = {AuthString.ButtonText.next}
                 onPress={() => handleNavigate()}
               />
         </View>
       
-      </ImageBackground>
+      {/* </ImageBackground> */}
     </ImageBackground>
   );
 };

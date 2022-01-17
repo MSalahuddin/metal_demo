@@ -28,8 +28,8 @@ const ScanBiometric = ({navigation}) => {
 
   return (
     <ImageBackground
-    style={styles.container}
-    source={background}>
+      style={styles.container}
+      source={background}>
       <Header 
       headerText = {AuthString.ScanBiometric.scanFigerprint}
       headerTextStyle = {{color: Colors.secondaryBtnText, fontSize: Fonts.size.xLarge}}/>

@@ -1,7 +1,7 @@
 // @flow
-import React, {useState} from 'react';
-import {View, Image, ImageBackground, Text, TouchableOpacity} from "react-native";
-import {Slider, Slide} from '../../components';
+import React, { useState } from 'react';
+import { View, Image, ImageBackground, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { Slider, Slide } from '../../components';
 import {
   first_onboarding,
   second_onboarding,
@@ -9,9 +9,9 @@ import {
   onboarding_bg,
   left_circle
 } from '../../assets/images';
-import {Colors, Fonts, Metrics} from "../../theme";
-import {onboarding} from "../../constant/stringConstants";
-import {SCREENS} from "../../constant/constant";
+import { Colors, Fonts, Metrics } from "../../theme";
+import { onboarding } from "../../constant/stringConstants";
+import { SCREENS } from "../../constant/constant";
 import Onboarding from 'react-native-onboarding-swiper';
 import PropTypes from 'prop-types';
 
@@ -32,7 +32,7 @@ const slides = [
   },
 ];
 
-const OnboardingScreen = ({navigation}) => {
+const OnboardingScreen = ({ navigation }) => {
   const [index, setIndex] = useState(0);
   // const prev = slides[index - 1];
   // const next = slides[index + 1];
@@ -126,20 +126,20 @@ const OnboardingScreen = ({navigation}) => {
   // };
 
   const buildPage = () => {
-    return{
+    return {
       backgroundColor: Colors.white,
       title: (
-        <View style = {{flexDirection: "row", justifyContent: "center",}}>
-          <View style = {{
+        <View style={{ flexDirection: "row", justifyContent: "center", }}>
+          <View style={{
             height: Metrics.screenHeight,
             width: Metrics.screenWidth * 0.9,
             flexDirection: "column",
             alignItems: "center",
             backgroundColor: "red"
-             }}></View>
+          }}></View>
           <View>
-             <Image source={onboarding_bg}/>
-          </View>  
+            <Image source={onboarding_bg} />
+          </View>
         </View>
       ),
       subtitle: null
@@ -147,101 +147,103 @@ const OnboardingScreen = ({navigation}) => {
   };
 
   const renderHeader = () => {
-    return(
-      <View style = {{
+    return (
+      <View style={{
         height: Metrics.screenHeight * 0.2,
         width: Metrics.screenWidth * 0.9,
-        flexDirection: "row", 
+        flexDirection: "row",
         // marginHorizontal: Metrics.ratio(20),
         alignItems: "center",
-      }}>  
+      }}>
         <Image
-          style = {{
+          style={{
             width: Metrics.ratio(120),
             height: Metrics.ratio(70),
           }}
           resizeMode='contain'
           resizeMethod='auto'
-          source={logo}/>
-          <Text
-            style = {{
-              fontSize: Fonts.size.eighteen,
-              fontFamily: Fonts.type.RobotoRegular,
-              color: Colors.mantle_grey,
-              marginLeft: "auto",
-              marginTop: Metrics.ratio(-7)
-            }}
-          >
-            {onboarding.skip}
-          </Text>
+          source={logo} />
+        <Text
+          style={{
+            fontSize: Fonts.size.eighteen,
+            fontFamily: Fonts.type.RobotoRegular,
+            color: Colors.mantle_grey,
+            marginLeft: "auto",
+            marginTop: Metrics.ratio(-7)
+          }}
+        >
+          {onboarding.skip}
+        </Text>
       </View>
     )
   }
 
   const handleNext = () => {
-    if(index < 1 ){
-      navigation.navigate(SCREENS.ENTER_PIN)
+    if (index < 1) {
+      navigation.navigate(SCREENS.PHONE_NO)
       // setIndex(index + 1);
-    }else{
-      navigation.navigate(SCREENS.ENTER_PIN)
+    } else {
+      navigation.navigate(SCREENS.PHONE_NO)
     }
   }
 
-  return(
-    <View style = {{flex: 1, flexDirection: "row"}}>
-      <View>
-        {renderHeader()}
-        <View style = {{alignItems: "center"}}>
-          <Image
-            resizeMethod= 'auto'
-           style = {{
-             height: Metrics.screenHeight * 0.3,
-             width: Metrics.screenWidth * 0.77,
-             right: Metrics.ratio(-10)
-             }} source={first_onboarding}/>
-        </View>
-        <View style = {{
-          width: Metrics.screenWidth * 0.7,
-          marginTop: "auto",
-          bottom: Metrics.screenHeight * 0.1,
-          marginHorizontal: Metrics.ratio(20)
-          }}>
-          <Text style = {{
-            fontFamily: Fonts.type.RobotoBold,
-            fontSize: Fonts.size.xxLarge,
-            color: Colors.mainHeading
-          }}>{onboarding.moneyTransfer}</Text> 
-            <Text style = {{
-            fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.eighteen,
-            color: Colors.headingContent,
-            marginTop: Metrics.ratio(15)
-          }}>{onboarding.loremipsum}</Text>  
-        </View>
-      </View>
-      <View style = {{marginLeft: "auto"}}>
-        <ImageBackground style = {{
-          height: Metrics.screenHeight,
-          width: Metrics.screenWidth * 0.22
-        }}
-        source={onboarding_bg}>
-         <TouchableOpacity 
-            onPress={()=> handleNext()}
-           style = {{
-            marginTop: "auto",
-            alignItems:"center",
-            bottom: Metrics.screenHeight * 0.17,
-          }}>
-          <Image 
-              resizeMode='contain'
+  return (
+    <SafeAreaView style={{ flex: 1, }}>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <View>
+          {renderHeader()}
+          <View style={{ alignItems: "center" }}>
+            <Image
               resizeMethod='auto'
-              source={left_circle}
+              style={{
+                height: Metrics.screenHeight * 0.3,
+                width: Metrics.screenWidth * 0.77,
+                right: Metrics.ratio(-10)
+              }} source={first_onboarding} />
+          </View>
+          <View style={{
+            width: Metrics.screenWidth * 0.7,
+            marginTop: "auto",
+            bottom: Metrics.screenHeight * 0.1,
+            marginHorizontal: Metrics.ratio(20)
+          }}>
+            <Text style={{
+              fontFamily: Fonts.type.RobotoBold,
+              fontSize: Fonts.size.xLarge,
+              color: Colors.mainHeading
+            }}>{onboarding.moneyTransfer}</Text>
+            <Text style={{
+              fontFamily: Fonts.type.RobotoRegular,
+              fontSize: Fonts.size.eighteen,
+              color: Colors.headingContent,
+              marginTop: Metrics.ratio(15)
+            }}>{onboarding.loremipsum}</Text>
+          </View>
+        </View>
+        <View style={{ marginLeft: "auto" }}>
+          <ImageBackground style={{
+            height: Metrics.screenHeight,
+            width: Metrics.screenWidth * 0.19
+          }}
+            source={onboarding_bg}>
+            <TouchableOpacity
+              onPress={() => handleNext()}
+              style={{
+                marginTop: "auto",
+                alignItems: "center",
+                bottom: Metrics.screenHeight * 0.17,
+              }}>
+              <Image
+                resizeMode='contain'
+                resizeMethod='auto'
+                source={left_circle}
               />
-         </TouchableOpacity>
-        </ImageBackground>
-      </View>
+            </TouchableOpacity>
+          </ImageBackground>
+        </View>
 
-    </View>
+      </View>
+    </SafeAreaView>
   )
 };
 
