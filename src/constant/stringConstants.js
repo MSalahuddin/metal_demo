@@ -37,7 +37,8 @@ export const AuthString = {
         continue: "CONTINUE",
         resendCode: "RESEND CODE",
         scanYourFingerPrint: 'Scan your fingerprint', 
-        next: "NEXT"
+        next: "NEXT",
+      
         
     },
     ScanBiometric: {
@@ -46,6 +47,11 @@ export const AuthString = {
 
     }
 };
+
+export const proceedPayment = {
+      btnText: "Proceed to Send"      
+};
+
 export const onboarding = {
     invesmentProduct: "INVESMENT PRODUCTS",
     moneyTransfer: "MONEY TRANFERS",

@@ -30,6 +30,14 @@ const home_selected = require("./home_selected.png");
 const metal_wihte_icon = require("./metal_wihte_icon.png");
 const check_icon = require("./check_icon.png");
 const in_process_icon = require("./in_process_icon.png");
+const flip = require("./flip.png");
+const nigeria_circle = require("./flags/nigeria.png");
+const united_states_circle = require("./flags/united_states.png");
+const Card = require("./Card.png");
+const back_arrow = require("./Back.png");
+const edit  = require("./edit.png");
+const deleteIcon = require("./delete.png");
+
 export {
     bg_half,
     background,
@@ -62,5 +70,12 @@ export {
     home_selected,
     metal_wihte_icon,
     check_icon,
-    in_process_icon
+    in_process_icon,
+    flip,
+    nigeria_circle,
+    united_states_circle,
+    Card,
+    back_arrow,
+    edit,
+    deleteIcon
 }

@@ -7,7 +7,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: Colors.grey,
     borderBottomColor: Colors.greyContent,
-    borderBottomWidth: Metrics.ratio(2)
+    borderBottomWidth: Metrics.ratio(2),
   },
   button: {
     width: Metrics.screenWidth * 0.4,

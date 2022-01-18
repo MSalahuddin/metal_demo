@@ -5,6 +5,6 @@ import { Colors, Metrics } from "../../theme";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Metrics.ratio(7)
+    marginTop: Metrics.ratio(18)
   }
 });
