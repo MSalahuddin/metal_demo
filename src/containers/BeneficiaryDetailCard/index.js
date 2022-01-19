@@ -2,7 +2,7 @@ import React from "react";
 import {View, Text, Image, ImageBackground, TouchableOpacity} from "react-native";
 import { Fonts, Metrics, Colors } from "../../theme";
 import styles from "./styles";
-import {Card, edit, deleteIcon, back_arrow} from "../../assets/images"
+import {Card, edit, deleteIcon, back_arrow, transfer, chevron_right} from "../../assets/images"
 import {Button, CustomHeader} from "../../components";
 import {proceedPayment} from "../../constant/stringConstants";
 
@@ -52,7 +52,7 @@ const BeneficiaryCardDetail = () => {
                                     <Text style = {styles.detailHeadText}>{item?.obj1?.type}</Text>
                                     <Text style = {styles.detailValText}>{item?.obj1?.value}</Text>
                                 </View>
-                                <View>
+                                <View style = {{}}>
                                     <Text style = {styles.detailHeadText}>{item?.obj2?.type}</Text>
                                     <Text style = {styles.detailValText}>{item?.obj2?.value}</Text>
                                 </View>
@@ -63,10 +63,42 @@ const BeneficiaryCardDetail = () => {
             </ImageBackground>
         )
     }
+    const renderButtons = () => {
+        return(
+            <View style = {{flex: 1, alignItems: "center"}}>
+                 <Button
+                customBtnStyle={{
+                     width: '90%', 
+                     marginTop: Metrics.ratio(30),
+                     marginBottom: Metrics.ratio(35),
+                     backgroundColor: Colors.dardBlue
+                     }}
+                btnText={proceedPayment.transferHistory}
+                leftIcon = {transfer}
+                rightIcon={chevron_right}
+                customRightIcon={{
+                    width: Metrics.ratio(15),
+                    height: Metrics.ratio(15),
+                }}
+                customRightIconContainer={{ 
+                    width: Metrics.ratio(15),
+                    height: Metrics.ratio(15),}}
+                onPress={() => {  }}/>
+                 <Button
+                customBtnStyle={{
+                     width: '70%', 
+                     marginBottom: Metrics.ratio(35),
+                     }}
+                btnText={proceedPayment.btnText}
+                onPress={() => {  }}/>
+            </View>
+        )
+    }
     return(
         <View style = {styles.container}> 
             <CustomHeader heading="Beneficiary" rightImage = {back_arrow}/>
             {rednerCardDetails()}
+            {renderButtons()}
         </View>
     );
 }

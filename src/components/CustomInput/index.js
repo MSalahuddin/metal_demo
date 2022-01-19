@@ -98,34 +98,35 @@ export default class CustomTextInput extends React.Component {
             />
           
           )}
-          {/* <Text style={styles.labelTopText}>{topLabelText}</Text> */}
-          <TextInput
-            placeholderTextColor={placeholderTextColor}
-            secureTextEntry={this.state.sec}
-            returnKeyType={returnKeyType}
-            enablesReturnKeyAutomaticallly={enablesReturnKeyAutomaticallly}
-            style={[styles.textInputStyle, TextInputPaddingStyle]}
-            placeholder={placeholder}
-            editable={isEditable}
-            ref={refrence}
-            value={value}
-            autoCapitalize={'none'}
-            onChangeText={value => onChangeInput(value)}
-            underlineColorAndroid={"black"}
-            onSubmitEditing={() => {
-              onSubmit(onSubmitRef);
-            }}
-            underlineColorAndroid="transparent"
-            keyboardType={keyboardType}
-          />
-
-          <Image
+        <View>
+          {topLabelText && <Text style={styles.labelTopText}>{topLabelText}</Text>}
+            <TextInput
+              placeholderTextColor={placeholderTextColor}
+              secureTextEntry={this.state.sec}
+              returnKeyType={returnKeyType}
+              enablesReturnKeyAutomaticallly={enablesReturnKeyAutomaticallly}
+              style={[styles.textInputStyle, TextInputPaddingStyle]}
+              placeholder={placeholder}
+              editable={isEditable}
+              ref={refrence}
+              value={value}
+              autoCapitalize={'none'}
+              onChangeText={value => onChangeInput(value)}
+              underlineColorAndroid={"black"}
+              onSubmitEditing={() => {
+                onSubmit(onSubmitRef);
+              }}
+              underlineColorAndroid="transparent"
+              keyboardType={keyboardType}
+            />
+          </View>
+         {inputRightIcon && <Image
             style={styles.rightIcon}
             resizeMode="contain"
             source={
               inputRightIcon
             }
-          />
+          />}
         </View>
         <Text style={styles.errormsg}> {emailError}</Text>
       </View>

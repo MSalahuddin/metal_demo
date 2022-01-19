@@ -44,6 +44,10 @@ const Card = require("./Card.png");
 const back_arrow = require("./Back.png");
 const edit  = require("./edit.png");
 const deleteIcon = require("./delete.png");
+const transfer = require("./transfer.png");
+const chevron_right = require("./chevron_right.png");
+const Calendar = require("./Calendar.png");
+const filter = require("./filter.png");
 
 export {
     bg_half,
@@ -92,5 +96,8 @@ export {
     back_arrow,
     edit,
     deleteIcon,
-    
+    transfer,
+    chevron_right,
+    Calendar,
+    filter
 }

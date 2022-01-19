@@ -10,7 +10,7 @@ export default StyleSheet.create({
         height: Metrics.screenHeight * 0.35,
         marginHorizontal: Metrics.screenWidth * 0.05,
         paddingHorizontal: Metrics.ratio(20),
-        paddingVertical: Metrics.ratio(25)
+        paddingVertical: Metrics.ratio(25),
         },
     avatarContainer: {
         width: Metrics.ratio(40),
