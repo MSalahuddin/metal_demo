@@ -37,7 +37,8 @@ export const AuthString = {
         continue: "CONTINUE",
         resendCode: "RESEND CODE",
         scanYourFingerPrint: 'Scan your fingerprint', 
-        next: "NEXT"
+        next: "NEXT",
+        share: "Share",
         
     },
     ScanBiometric: {

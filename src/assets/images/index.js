@@ -30,6 +30,13 @@ const home_selected = require("./home_selected.png");
 const metal_wihte_icon = require("./metal_wihte_icon.png");
 const check_icon = require("./check_icon.png");
 const in_process_icon = require("./in_process_icon.png");
+const Back_icon = require("./Back_icon.png");
+const add_favorites = require("./add_favorites.png");
+const side_line = require("./side_line.png");
+const next_icon = require("./next_icon.png");
+const side_line2 = require("./side_line2.png");
+const Success_icon = require("./Success_icon.png");
+const share = require("./share.png")
 export {
     bg_half,
     background,
@@ -62,5 +69,12 @@ export {
     home_selected,
     metal_wihte_icon,
     check_icon,
-    in_process_icon
+    in_process_icon,
+    Back_icon,
+    add_favorites,
+    side_line,
+    side_line2,
+    next_icon,
+    Success_icon,
+    share,
 }

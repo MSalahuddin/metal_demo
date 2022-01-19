@@ -9,6 +9,8 @@ import PhoneNo from "./Signup/PhoneNo";
 import Home from "./Home";
 import SelectPurpose from "./SelectPurpose";
 import OnboardingScreen from './Onboarding';
+import Beneficiaries from './Beneficiaries';
+import TransferProcessed from "./TransferProcessed";
 export {
     Login,
     OTP,
@@ -21,4 +23,6 @@ export {
     Home,
     SelectPurpose,
     OnboardingScreen,
+    Beneficiaries,
+    TransferProcessed,
 }
