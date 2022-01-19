@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList } from 'react-native';
 
+import styles from './styles';
 import Button from '../../components/Button';
 import { AuthString } from '../../constant/stringConstants';
 import { Colors, Metrics, Fonts } from '../../theme';
@@ -69,9 +70,10 @@ const TransferProcessed = () => {
             <View style={styles.buttonContainer} >
 
                 <Button
-                    customBtnStyle={{ width: "80%", marginBottom: 30 }}
+                    customBtnStyle={{ width: Metrics.ratio("80%"), marginBottom: Metrics.ratio(20) }}
                     textStyle={{ fontFamily: Fonts.type.RobotoRegular, fontSize: Fonts.size.large }}
                     leftIcon={share}
+                    customLeftIcon={{ marginLeft: Metrics.ratio(70), width: Metrics.ratio("80%"), height: Metrics.ratio("80%"), marginVertical: Metrics.ratio(2) }}
                     btnText={AuthString.ButtonText.share} />
             </View>
 
@@ -81,49 +83,3 @@ const TransferProcessed = () => {
 }
 
 export default TransferProcessed;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: Colors.White,
-    },
-    heading: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 20,
-    },
-    headingText: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: Fonts.type.RobotoRegular,
-        color: Colors.placeholderContent,
-        fontSize: Fonts.size.xLarge,
-    },
-    text: {
-        fontFamily: Fonts.type.RobotoRegular,
-        color: Colors.placeholderContent,
-        fontSize: Fonts.size.sixteen,
-        marginVertical: Metrics.ratio(5)
-    },
-    amounts: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: Metrics.ratio(30)
-    },
-    sentAmount: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: Fonts.type.RobotoMedium,
-        color: Colors.placeholderContent,
-        fontSize: Fonts.size.xLarge,
-    },
-    sentAmountText: {
-        fontFamily: Fonts.type.RobotoRegular,
-        fontSize: Fonts.size.sixteen,
-        color: Colors.placeholderContent,
-    },
-    buttonContainer: {
-        alignItems: 'center'
-    },
-
-})
