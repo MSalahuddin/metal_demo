@@ -59,7 +59,7 @@ export default {
   orange_text,
   green_text,
   placeholderContentWithOpacity,
-  light_blue
+  light_blue,
   mineShaft,
   avatarNameContainer
 };
