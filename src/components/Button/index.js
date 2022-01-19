@@ -12,17 +12,19 @@ const Button = (props) => {
     leftIcon,
     btnText,
     rightIcon,
-    onPress
+    onPress,
+    customLeftIconContainer,
+    customLeftIcon
   } = props;
 
   return (
     <TouchableOpacity 
       onPress={onPress}
       style={[styles.btnContainer, customBtnStyle]}>
-      <View style = {styles.leftIconContainer}>
+      <View style = {[styles.leftIconContainer, customLeftIconContainer]}>
         {leftIcon && (
           <Image
-            style={styles.leftIcon}
+            style={[styles.leftIcon, customLeftIcon]}
             resizeMode="contain"
             source={leftIcon}
           />
@@ -48,7 +50,9 @@ Button.defaultProps = {
   btnText: undefined,
   textStyle: undefined,
   rightIcon: undefined,
-  onPress: undefined
+  onPress: undefined,
+  customLeftIconContainer: undefined,
+  customLeftIcon: undefined
 };
 
 Button.propTypes = {
@@ -57,7 +61,9 @@ Button.propTypes = {
   btnText: PropTypes.string,
   textStyle: PropTypes.object,
   rightIcon: PropTypes.object,
-  onPress: PropTypes.func
+  onPress: PropTypes.func,
+  customLeftIconContainer: PropTypes.object,
+  customLeftIcon: PropTypes.object
 };
 
 export default Button;

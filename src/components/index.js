@@ -10,6 +10,8 @@ import CarouselSlider from './CarouselSlider';
 import CountryPickerModal from "./CountryPickerModal";
 import EnterYourPassword from './EnterYourPassword';
 import CustomTabView from './TabView';
+import CustomHeader from './CustomHeader';
+
 export {
   Button,
   Header,
@@ -23,4 +25,5 @@ export {
   CountryPickerModal,
   EnterYourPassword,
   CustomTabView,
+  CustomHeader
 };

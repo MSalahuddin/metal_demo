@@ -11,6 +11,8 @@ import SelectPurpose from "./SelectPurpose";
 import OnboardingScreen from './Onboarding';
 import Beneficiaries from './Beneficiaries';
 import TransferProcessed from "./TransferProcessed";
+import ProceedPayment from "./ProceedPayment";
+import BeneficiaryCardDetail from "./BeneficiaryDetailCard";
 export {
     Login,
     OTP,
@@ -25,4 +27,6 @@ export {
     OnboardingScreen,
     Beneficiaries,
     TransferProcessed,
+    ProceedPayment,
+    BeneficiaryCardDetail
 }

@@ -7,6 +7,8 @@ import {
   TransferProcessed,
   Beneficiaries,
 
+  ProceedPayment,
+  BeneficiaryCardDetail
 } from '../../containers';
 import { SCREENS } from '../../constant/constant';
 
@@ -19,6 +21,8 @@ const AppStackScreen = () => {
       <AppStack.Screen name= {SCREENS.SELECT_PURPOSE} component={SelectPurpose} />
       <AppStack.Screen name= {SCREENS.BENEFICIARIES} component={Beneficiaries} />
       <AppStack.Screen name= {SCREENS.TRANSFER_PROCESSED} component={TransferProcessed} />
+      <AppStack.Screen name= {SCREENS.PROCEED_PAYMENT} component={ProceedPayment} />
+      <AppStack.Screen name= {SCREENS.BENEFICIARY_CARD_DETAIL} component={BeneficiaryCardDetail} />
 
     </AppStack.Navigator>
   );

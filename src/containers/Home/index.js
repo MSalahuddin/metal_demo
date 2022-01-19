@@ -99,7 +99,7 @@ const RenderListTab = ({ data }) => {
   };
 
   return (
-    <View style={{ backgroundColor: Colors.white, marginTop: "auto" }}>
+    <View style={{ backgroundColor: Colors.white,}}>
       {data.map((data) => renderListItem(data))}
       <TouchableOpacity style={{
         alignItems: "center",
@@ -143,11 +143,6 @@ const Home = ({ navigation }) => {
   const renderCarousel = () => {
     return (
       <ImageBackground source={banner} style={styles.carouselContainer}>
-        {/* <Animated.View style={{ opacity: promoBannerOpacity }}>
-          <CarouselSlider
-            bannerImages = {[banner]}
-          />
-        </Animated.View> */}
         <View style={{
           flexDirection: "row",
           marginTop: Metrics.ratio(30),
@@ -189,7 +184,7 @@ const Home = ({ navigation }) => {
 
   const renderSelection = () => {
     return (
-      <View style={{ marginHorizontal: Metrics.screenWidth * 0.05 }}>
+      <View style={{ marginHorizontal: Metrics.screenWidth * 0.05,}}>
         <Text style=
           {{
             fontFamily: Fonts.type.RobotoRegular,
@@ -203,7 +198,7 @@ const Home = ({ navigation }) => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          marginVertical: Metrics.ratio(35)
+          marginVertical: Metrics.ratio(20)
         }}>
           <TouchableOpacity style={styles.selectButon}>
             <Image style={{

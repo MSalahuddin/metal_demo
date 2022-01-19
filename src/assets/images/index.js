@@ -36,7 +36,15 @@ const side_line = require("./side_line.png");
 const next_icon = require("./next_icon.png");
 const side_line2 = require("./side_line2.png");
 const Success_icon = require("./Success_icon.png");
-const share = require("./share.png")
+const share = require("./share.png");
+const flip = require("./flip.png");
+const nigeria_circle = require("./flags/nigeria.png");
+const united_states_circle = require("./flags/united_states.png");
+const Card = require("./Card.png");
+const back_arrow = require("./Back.png");
+const edit  = require("./edit.png");
+const deleteIcon = require("./delete.png");
+
 export {
     bg_half,
     background,
@@ -77,4 +85,12 @@ export {
     next_icon,
     Success_icon,
     share,
+    flip,
+    nigeria_circle,
+    united_states_circle,
+    Card,
+    back_arrow,
+    edit,
+    deleteIcon,
+    
 }

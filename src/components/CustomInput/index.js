@@ -98,6 +98,7 @@ export default class CustomTextInput extends React.Component {
             />
           
           )}
+          {/* <Text style={styles.labelTopText}>{topLabelText}</Text> */}
           <TextInput
             placeholderTextColor={placeholderTextColor}
             secureTextEntry={this.state.sec}
