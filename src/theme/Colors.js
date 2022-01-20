@@ -29,9 +29,10 @@ const mantle_grey = "#8D9390";
 const orange_text = "#EF9C55";
 const green_text = "#00D832";
 const placeholderContentWithOpacity = "rgba(32, 49, 82, 0.55)";
-const light_blue = "#009DDD4D"
+const light_blue = "#009DDD4D";
 const mineShaft = "#222222";
-const avatarNameContainer = "rgba(0, 0, 0, 0.4)"
+const avatarNameContainer = "rgba(0, 0, 0, 0.4)";
+const silver = "#E9E9E9";
 // app theme colors
 
 // ====================================================
@@ -61,5 +62,6 @@ export default {
   placeholderContentWithOpacity,
   light_blue,
   mineShaft,
-  avatarNameContainer
+  avatarNameContainer,
+  silver,
 };

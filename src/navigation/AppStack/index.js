@@ -6,6 +6,7 @@ import {
   SelectPurpose,
   TransferProcessed,
   Beneficiaries,
+  TransactionDetails,
 
   ProceedPayment,
   BeneficiaryCardDetail
@@ -16,10 +17,11 @@ import { SCREENS } from '../../constant/constant';
 const AppStack = createStackNavigator();
 const AppStackScreen = () => {
   return (
-    <AppStack.Navigator headerMode="none" initialRouteName={SCREENS.TRANSFER_PROCESSED}>
+    <AppStack.Navigator headerMode="none" initialRouteName={SCREENS.TRANSACTION_DETAILS}>
       <AppStack.Screen name={SCREENS.HOME} component={Home} />
       <AppStack.Screen name= {SCREENS.SELECT_PURPOSE} component={SelectPurpose} />
       <AppStack.Screen name= {SCREENS.BENEFICIARIES} component={Beneficiaries} />
+      <AppStack.Screen name= {SCREENS.TRANSACTION_DETAILS} component={TransactionDetails} />
       <AppStack.Screen name= {SCREENS.TRANSFER_PROCESSED} component={TransferProcessed} />
       <AppStack.Screen name= {SCREENS.PROCEED_PAYMENT} component={ProceedPayment} />
       <AppStack.Screen name= {SCREENS.BENEFICIARY_CARD_DETAIL} component={BeneficiaryCardDetail} />

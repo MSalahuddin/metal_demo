@@ -44,6 +44,8 @@ const Card = require("./Card.png");
 const back_arrow = require("./Back.png");
 const edit  = require("./edit.png");
 const deleteIcon = require("./delete.png");
+const wallet = require("./wallet.png");
+const up = require("./up.png");
 
 export {
     bg_half,
@@ -92,5 +94,6 @@ export {
     back_arrow,
     edit,
     deleteIcon,
-    
+    up,
+    wallet,
 }

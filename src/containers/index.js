@@ -13,6 +13,7 @@ import Beneficiaries from './Beneficiaries';
 import TransferProcessed from "./TransferProcessed";
 import ProceedPayment from "./ProceedPayment";
 import BeneficiaryCardDetail from "./BeneficiaryDetailCard";
+import TransactionDetails from "./TransactionDetails";
 export {
     Login,
     OTP,
@@ -28,5 +29,6 @@ export {
     Beneficiaries,
     TransferProcessed,
     ProceedPayment,
-    BeneficiaryCardDetail
+    BeneficiaryCardDetail,
+    TransactionDetails,
 }
