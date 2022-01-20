@@ -4,7 +4,6 @@ import { Fonts, Metrics, Colors } from '../../theme';
 
 export default StyleSheet.create({
   InputView: {
-    // width: Metrics.screenWidth * 0.7,
     height: Metrics.ratio(40),
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -18,7 +17,7 @@ export default StyleSheet.create({
     color: Colors.placeholderContent,
     fontSize: Fonts.size.eighteen,
     // paddingHorizontal: Metrics.ratio(3),
-    paddingTop: Metrics.ratio(10)
+    paddingTop: Metrics.ratio(10),
   },
   inputIcon: {
     width: Metrics.ratio(40),
@@ -32,4 +31,9 @@ export default StyleSheet.create({
   rightIcon: {
     marginTop: Metrics.ratio(10)
   },
+  labelTopText: {
+    fontFamily: Fonts.type.RobotoRegular,
+    fontSize: Fonts.size.twelve,
+    color: Colors.mantle_grey
+  }
 });

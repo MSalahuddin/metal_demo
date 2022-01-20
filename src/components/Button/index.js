@@ -14,7 +14,9 @@ const Button = (props) => {
     rightIcon,
     onPress,
     customLeftIconContainer,
-    customLeftIcon
+    customLeftIcon,
+    customRightIcon,
+    customRightIconContainer
   } = props;
 
   return (
@@ -31,10 +33,10 @@ const Button = (props) => {
         )}
       </View>
       <Text style = {[styles.textStyle, textStyle]}>{btnText}</Text>
-      <View style = {styles.rightIconContainer}>
+      <View style = {[styles.rightIconContainer, customRightIconContainer]}>
         {rightIcon && (
           <Image
-            style={styles.rightIcon}
+            style={[styles.rightIcon, customRightIcon]}
             resizeMode="contain"
             source={rightIcon}
           />
@@ -52,7 +54,9 @@ Button.defaultProps = {
   rightIcon: undefined,
   onPress: undefined,
   customLeftIconContainer: undefined,
-  customLeftIcon: undefined
+  customLeftIcon: undefined,
+  customRightIcon: undefined,
+  customRightIconContainer: undefined
 };
 
 Button.propTypes = {
@@ -63,7 +67,9 @@ Button.propTypes = {
   rightIcon: PropTypes.object,
   onPress: PropTypes.func,
   customLeftIconContainer: PropTypes.object,
-  customLeftIcon: PropTypes.object
+  customLeftIcon: PropTypes.object,
+  customRightIcon: PropTypes.object,
+  customRightIconContainer: PropTypes.object,
 };
 
 export default Button;

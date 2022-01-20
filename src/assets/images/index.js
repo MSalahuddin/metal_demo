@@ -46,6 +46,10 @@ const edit  = require("./edit.png");
 const deleteIcon = require("./delete.png");
 const wallet = require("./wallet.png");
 const up = require("./up.png");
+const transfer = require("./transfer.png");
+const chevron_right = require("./chevron_right.png");
+const Calendar = require("./Calendar.png");
+const filter = require("./filter.png");
 
 export {
     bg_half,
@@ -96,4 +100,8 @@ export {
     deleteIcon,
     up,
     wallet,
+    transfer,
+    chevron_right,
+    Calendar,
+    filter
 }
