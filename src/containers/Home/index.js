@@ -49,7 +49,7 @@ const RenderListTab = ({ data, handleNavigation }) => {
           borderBottomWidth: Metrics.ratio(1),
           borderBottomColor: Colors.grey,
         }}
-        onPress={() => { handleNavigation() }}
+        onPress={() => { }}
       >
         <View style={{
           width: Metrics.ratio(40),
@@ -209,7 +209,7 @@ const Home = ({ navigation }) => {
           justifyContent: "center",
           marginVertical: Metrics.ratio(20)
         }}>
-          <TouchableOpacity style={styles.selectButon}>
+          <TouchableOpacity style={styles.selectButon} onPress={() => { handleNavigate() }}>
             <Image style={{
               // width: Metrics.ratio(27), height: Metrics.ratio(27)
             }} source={send_money} />

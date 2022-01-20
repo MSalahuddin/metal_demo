@@ -108,7 +108,7 @@ const TransferDetail = ({ navigation }) => {
                         width: Metrics.ratio(15),
                         height: Metrics.ratio(15),
                     }}
-                    onPress={() => handleNavigate()} />
+                    onPress={() => { }} />
                 {/* <Button
                     customBtnStyle={{
                         width: '70%',
@@ -171,17 +171,18 @@ const TransferDetail = ({ navigation }) => {
 
     const renderSelection = () => {
         return (
-            <View style={{ 
+            <View style={{
                 marginHorizontal: Metrics.screenWidth * 0.05,
-                marginBottom: Metrics.screenHeight * 0.1 }}>
+                marginBottom: Metrics.screenHeight * 0.1
+            }}>
                 <Text style=
                     {{
                         fontFamily: Fonts.type.RobotoRegular,
                         fontSize: Fonts.size.eighteen,
                         color: Colors.secondaryBtnText,
-                        // marginTop: Metrics.ratio(15)
+                        marginTop: Metrics.ratio(10)
                     }}>
-                    {"How do you want to do pay?"}
+                    {"How do you want to pay?"}
                 </Text>
                 <View style={{
                     flexDirection: "row",
@@ -189,7 +190,7 @@ const TransferDetail = ({ navigation }) => {
                     justifyContent: "center",
                     marginVertical: Metrics.ratio(20)
                 }}>
-                    <TouchableOpacity style={styles.selectButon}>
+                    <TouchableOpacity style={styles.selectButon} onPress={() => { handleNavigate() }}>
                         <Image style={{
                             // width: Metrics.ratio(27), height: Metrics.ratio(27)
                         }} source={credit_card} />
@@ -213,7 +214,7 @@ const TransferDetail = ({ navigation }) => {
                                 color: Colors.mantle_grey,
                                 marginTop: Metrics.ratio(8)
                             }
-                        }>{"Cash by Agent"}</Text>
+                        }>{"Cash at Agent"}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

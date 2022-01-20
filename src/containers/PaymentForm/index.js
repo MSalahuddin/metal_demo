@@ -152,7 +152,7 @@ const PaymentForm = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-            <CustomHeader heading="Payment Methods" rightImage={back_arrow} />
+            <CustomHeader heading="Payment" rightImage={back_arrow} />
             {renderFields()}
             <View style={{ flex: 1, alignItems: "center", }}>
                 <Button

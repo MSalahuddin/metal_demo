@@ -36,7 +36,7 @@ const TransferProcessed = () => {
         { title: "Beneficiary Name", subTitle: "Ashley Farmer", isBold: false },
         { title: "Account Number", subTitle: "416 512 978 4562", isBold: false },
         { title: "Bank", subTitle: "Zenith Bank, Nigeria", isBold: false },
-        { title: "paid Amount", subTitle: "USD 503.00", isBold: true }
+        { title: "Paid Amount", subTitle: "USD 503.00", isBold: true }
     ];
     return (
         <View style={styles.container}>
