@@ -186,110 +186,110 @@ const TransferDetails = ({
                         color: Colors.placeholderContentWithOpacity
                     }}>{num}</Text>
                 </View>
-                <Image style={{height: Metrics.ratio("70%"), top: Metrics.ratio(10),}} source={image} />
+                <Image style={{ height: Metrics.ratio("70%"), top: Metrics.ratio(10), }} source={image} />
 
             </View>
 
             <View style={{
                 justifyContent: 'space-evenly',
                 marginVertical: Metrics.ratio(25),
-                
+
             }}>
 
-            <View style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContentWithOpacity,
-                }}>{info}</Text>
+                <View style={{
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginHorizontal: Metrics.ratio(20),
+                    marginBottom: Metrics.ratio(5),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContentWithOpacity,
+                    }}>{info}</Text>
 
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{detail}</Text>
-            </View>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{detail}</Text>
+                </View>
 
-            <View style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContentWithOpacity,
-                }}>{email}</Text>
+                <View style={{
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginHorizontal: Metrics.ratio(20),
+                    marginBottom: Metrics.ratio(5),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContentWithOpacity,
+                    }}>{email}</Text>
 
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{emailID}</Text>
-            </View>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{emailID}</Text>
+                </View>
 
-            <View style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{paidAmount}</Text>
+                <View style={{
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginHorizontal: Metrics.ratio(20),
+                    marginBottom: Metrics.ratio(5),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{paidAmount}</Text>
 
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoMedium,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{amount}</Text>
-            </View>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoMedium,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{amount}</Text>
+                </View>
 
-            <View style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{sentAmount}</Text>
+                <View style={{
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginHorizontal: Metrics.ratio(20),
+                    marginBottom: Metrics.ratio(5),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{sentAmount}</Text>
 
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoMedium,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{sendedAmount}</Text>
-            </View>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoMedium,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{sendedAmount}</Text>
+                </View>
 
-            <View style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{transferAmount}</Text>
+                <View style={{
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                    marginHorizontal: Metrics.ratio(20),
+                    marginBottom: Metrics.ratio(5),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{transferAmount}</Text>
 
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoMedium,
-                    fontSize: Fonts.size.sixteen,
-                    color: Colors.placeholderContent,
-                }}>{transferdAmount}</Text>
-            </View>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoMedium,
+                        fontSize: Fonts.size.sixteen,
+                        color: Colors.placeholderContent,
+                    }}>{transferdAmount}</Text>
+                </View>
 
             </View>
 
@@ -299,7 +299,6 @@ const TransferDetails = ({
 };
 
 const TransactionDetails = () => {
-
     return (
         <View style={styles.container}>
             <View style={styles.subContainer}>
@@ -313,27 +312,27 @@ const TransactionDetails = () => {
                 others="Zenith Bank, Nigeria" />
 
             <TransferDetails
-            title= "Transfer"
-            subTitle= "NGN 205,402.02"
-            image= { side_line2 }
-            id= "Transaction ID"
-            num= "1006598860356462"
-            info= "Mobile Number"
-            detail= "28920919820"
-            email= "Email"
-            emailID= "ashley@metal.com"
-            paidAmount= "Paid Amount"
-            amount= "USD 503.00"
-            sentAmount= "Sent Amount"
-            sendedAmount= "USD 500.00"
-            transferAmount= "Transfer Amount"
-            transferdAmount= "NGN 205,402.02"
+                title="Transfer"
+                subTitle="NGN 205,402.02"
+                image={side_line2}
+                id="Transaction ID"
+                num="1006598860356462"
+                info="Mobile Number"
+                detail="28920919820"
+                email="Email"
+                emailID="ashley@metal.com"
+                paidAmount="Paid Amount"
+                amount="USD 503.00"
+                sentAmount="Sent Amount"
+                sendedAmount="USD 500.00"
+                transferAmount="Transfer Amount"
+                transferdAmount="NGN 205,402.02"
             />
 
             <View style={styles.buttonContainer} >
 
                 <Button
-                    customBtnStyle={{ width: Metrics.ratio("70%")}}
+                    customBtnStyle={{ width: Metrics.ratio("70%") }}
                     textStyle={{ fontFamily: Fonts.type.RobotoRegular, fontSize: Fonts.size.large }}
                     leftIcon={share}
                     customLeftIcon={{ marginLeft: Metrics.ratio(60), width: Metrics.ratio("70%"), height: Metrics.ratio("80%"), marginVertical: Metrics.ratio(2) }}

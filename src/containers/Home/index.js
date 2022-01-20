@@ -33,21 +33,24 @@ import {
   in_process_icon,
   check_icon
 } from "../../assets/images";
+import { SCREENS } from '../../constant/constant';
 
 
-const RenderListTab = ({ data }) => {
-
+const RenderListTab = ({ data, handleNavigation }) => {
   const renderListItem = ({ name, date, amount, image, isCompleted }) => {
     return (
-      <View style={{
-        flexDirection: "row",
-        paddingHorizontal: Metrics.ratio(20),
-        alignItems: "center",
-        backgroundColor: Colors.white,
-        paddingVertical: Metrics.ratio(10),
-        borderBottomWidth: Metrics.ratio(1),
-        borderBottomColor: Colors.grey,
-      }}>
+      <TouchableOpacity
+        style={{
+          flexDirection: "row",
+          paddingHorizontal: Metrics.ratio(20),
+          alignItems: "center",
+          backgroundColor: Colors.white,
+          paddingVertical: Metrics.ratio(10),
+          borderBottomWidth: Metrics.ratio(1),
+          borderBottomColor: Colors.grey,
+        }}
+        onPress={() => { handleNavigation() }}
+      >
         <View style={{
           width: Metrics.ratio(40),
           height: Metrics.ratio(40),
@@ -94,12 +97,12 @@ const RenderListTab = ({ data }) => {
           }}
             source={isCompleted ? check_icon : in_process_icon} />
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
   return (
-    <View style={{ backgroundColor: Colors.white,}}>
+    <View style={{ backgroundColor: Colors.white, }}>
       {data.map((data) => renderListItem(data))}
       <TouchableOpacity style={{
         alignItems: "center",
@@ -139,6 +142,12 @@ const Home = ({ navigation }) => {
       useNativeDriver: true
     }).start(() => { });//setIsPromoCardVisible(false), setUserGuidePromoCode(false)
   };
+
+  // handle navigation
+  const handleNavigate = () => {
+    navigation.navigate(SCREENS.BENEFICIARIES)
+  };
+
 
   const renderCarousel = () => {
     return (
@@ -184,7 +193,7 @@ const Home = ({ navigation }) => {
 
   const renderSelection = () => {
     return (
-      <View style={{ marginHorizontal: Metrics.screenWidth * 0.05,}}>
+      <View style={{ marginHorizontal: Metrics.screenWidth * 0.05, }}>
         <Text style=
           {{
             fontFamily: Fonts.type.RobotoRegular,
@@ -284,7 +293,7 @@ const Home = ({ navigation }) => {
     return (
       <RenderListTab
         data={recentTransfer}
-        // handleNavigation={handleNavigation}
+        handleNavigation={handleNavigate}
         navigation={navigation}
       />
     );
@@ -294,7 +303,7 @@ const Home = ({ navigation }) => {
     return (
       <RenderListTab
         data={recentTransfer}
-        // handleNavigation={handleNavigation}
+        handleNavigation={handleNavigate}
         navigation={navigation}
       />
     );

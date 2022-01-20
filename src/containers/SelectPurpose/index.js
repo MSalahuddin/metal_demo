@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
-
+import { Button, CustomHeader } from "../../components";
 import styles from './styles';
+import { Card, edit, deleteIcon, back_arrow, transfer, chevron_right } from "../../assets/images";
 
 const selectPurpose = [
     { label: 'Family Support', value: 0 },
@@ -12,16 +13,18 @@ const selectPurpose = [
 ];
 
 class SelectPurpose extends Component {
+
     constructor() {
         super();
         this.state = {
             selectedPurpose: -1,
         }
     }
+
     render() {
         return (
             <View style={styles.container} >
-                <Text style={styles.text}>Select Purpose</Text>
+                <CustomHeader heading="Select Purpose" rightImage={back_arrow} />
                 <RadioForm style={styles.subContainer}
                     formHorizontal={false}
                     animation={true}

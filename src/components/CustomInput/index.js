@@ -113,9 +113,9 @@ export default class CustomTextInput extends React.Component {
               autoCapitalize={'none'}
               onChangeText={value => onChangeInput(value)}
               underlineColorAndroid={"black"}
-              onSubmitEditing={() => {
-                onSubmit(onSubmitRef);
-              }}
+              // onSubmitEditing={() => {
+              //   onSubmit(onSubmitRef);
+              // }}
               underlineColorAndroid="transparent"
               keyboardType={keyboardType}
             />

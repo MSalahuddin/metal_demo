@@ -13,7 +13,8 @@ const Details = ({ title, subTitle, isBold }) => {
             justifyContent: 'space-between',
             alignItems: 'center',
             flexDirection: 'row',
-            paddingHorizontal: Metrics.ratio(20)
+            paddingHorizontal: Metrics.ratio(20),
+            paddingVertical:  Metrics.ratio(10),
         }}>
             <Text style={{
                 fontFamily: Fonts.type.RobotoRegular,
@@ -42,6 +43,12 @@ const TransferProcessed = () => {
             <View style={styles.heading}>
                 <Text style={styles.headingText}>Congratulations</Text>
                 <Text style={styles.text}>Your transfer has been processed</Text>
+            </View>
+            <View style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginVertical: Metrics.ratio(20)
+            }}>
                 <Image style={styles.image} source={Success_icon} />
             </View>
             <View style={styles.amounts}>

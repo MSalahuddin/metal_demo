@@ -7,9 +7,10 @@ export default StyleSheet.create({
         backgroundColor: Colors.white,
     },
     heading: {
+        flex: 1,
+        marginTop: Metrics.ratio(30),
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20,
     },
     headingText: {
         justifyContent: 'center',

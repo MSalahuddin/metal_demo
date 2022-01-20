@@ -52,7 +52,7 @@ class Navigation extends Component {
         {/* <OverlayLoader isLoading={isLoading} /> */}
         {/* user */}
         {/* newView === SCREENS.HOME */}
-        {true ? <AppStack /> : <AuthStack />}
+        {newView === SCREENS.HOME ? <AppStack /> : <AuthStack />}
       </NavigationContainer>
     );
   }

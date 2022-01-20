@@ -1,16 +1,27 @@
 import React from 'react';
-import { Image, Text, View, StyleSheet, FlatList } from 'react-native';
+import { Image, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { Colors, Metrics, Fonts } from '../../theme';
-import { Back_icon, side_line, add_favorites, next_icon, side_line2 } from '../../assets/images';
+import {
+    back_arrow,
+    side_line,
+    add_favorites,
+    next_icon,
+    side_line2,
+    home_selected,
+    profile_icon,
+    help_icon
+} from '../../assets/images';
 import styles from './styles';
-
+import { CustomHeader } from "../../components";
+import { SCREENS } from "../../constant/constant";
 
 const FavoriteBeneficiaries = ({ title, subTitle, icon, isIcon }) => {
     return (
         <View style={{
             width: Metrics.ratio(100),
-            height: Metrics.ratio(130),
+            height: "70%",
             backgroundColor: Colors.white,
             borderRadius: Metrics.ratio(10),
             alignItems: 'center',
@@ -18,84 +29,105 @@ const FavoriteBeneficiaries = ({ title, subTitle, icon, isIcon }) => {
             elevation: 3,
         }}>
             <View style={{
-                width: Metrics.ratio(60),
-                height: Metrics.ratio(60),
+                width: Metrics.ratio(50),
+                height: Metrics.ratio(50),
                 backgroundColor: isIcon ? Colors.light_blue : Colors.primaryBtn,
                 borderRadius: Metrics.ratio(30),
-                marginTop: Metrics.ratio(5),
+                marginTop: Metrics.ratio(15),
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
                 {isIcon ? <Image source={add_favorites} /> : <Text style={{ fontFamily: Fonts.type.RobotoRegular, fontSize: Fonts.size.eighteen, color: Colors.white, }}>{icon}</Text>}
             </View>
 
-            <Text style={{
-                marginVertical: Metrics.ratio(8),
-                fontFamily: Fonts.type.RobotoMedium,
-            }}>{title}</Text>
+            <View style={{
+                marginTop: "auto",
+                alignItems: "center",
+            }}>
+                <Text style={{
+                    color: Colors.placeholderContent,
+                    fontFamily: Fonts.type.RobotoRegular,
+                    fontSize: Fonts.size.thirteen,
+                    marginTop: Metrics.ratio(10)
+                }}>{title}</Text>
+                <Text style={{
+                    color: Colors.mantle_grey,
+                    fontFamily: Fonts.type.RobotoRegular,
+                    fontSize: Fonts.size.thirteen,
+                    marginVertical: Metrics.ratio(7)
+                }}>{subTitle}</Text>
+            </View>
 
-            <Text style={{
-                fontFamily: Fonts.type.RobotoRegular,
-                fontSize: Fonts.size.thirteen,
-            }}>{subTitle}</Text>
         </View>
     )
 };
 
-const AllBeneficiaries = ({ image, title, subTitle, others }) => {
+const AllBeneficiaries = ({ image, title, subTitle, others, handleNavigate }) => {
     return (
-        <View style={{
-            width: Metrics.ratio("100%"),
-            height: Metrics.ratio(70),
-            backgroundColor: Colors.white,
-            alignItems: 'center',
-        }}>
-            <Image
-                source={image}
-                style={{
-                    position: 'absolute',
-                    left: Metrics.ratio(15),
-                    top: Metrics.ratio(10),
-                }} />
+        <TouchableOpacity
+            style={{
+                width: Metrics.ratio("100%"),
+                height: Metrics.ratio(70),
+                backgroundColor: Colors.white,
+                alignItems: 'center',
+                flexDirection: "row",
+                borderBottomColor: Colors.greyContent,
+                borderBottomWidth: Metrics.ratio(1),
+                paddingHorizontal: Metrics.ratio(15),
+            }}
+            onPress={() => handleNavigate()}
+        >
+            <View style={{ flexDirection: "row" }}>
+                <Image
+                    source={image}
+                    style={{
+                        top: Metrics.ratio(15)
+                    }} />
 
-            <View style={{
-                position: 'absolute',
-                left: Metrics.ratio(25),
-                marginVertical: Metrics.ratio(8),
-            }}>
-                <Text style={{
-                    fontFamily: Fonts.type.RobotoRegular,
-                    fontSize: Fonts.size.eighteen,
-                    color: Colors.primaryBtn,
-                }}>{title}</Text>
+                <View style={{
+                    left: Metrics.ratio(25),
+                    marginVertical: Metrics.ratio(8),
+                }}>
+                    <Text style={{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.eighteen,
+                        color: Colors.primaryBtn,
+                    }}>{title}</Text>
 
-                <Text style={{
-                    color: Colors.placeholderContent,
-                    fontSize: Fonts.size.twelve,
-                }}>{subTitle}</Text>
+                    <Text style={{
+                        color: Colors.placeholderContent,
+                        fontSize: Fonts.size.twelve,
+                    }}>{subTitle}</Text>
 
-                <Text style={{
-                    fontSize: Fonts.size.twelve,
-                }}>{others}</Text>
+                    <Text style={{
+                        color: Colors.mantle_grey,
+                        fontSize: Fonts.size.twelve,
+                    }}>{others}</Text>
+
+                </View>
             </View>
             <Image
                 source={next_icon}
                 style={{
-                    position: 'absolute',
-                    right: Metrics.ratio(20),
-                    top: Metrics.ratio(25)
+                    marginLeft: "auto"
                 }} />
-
-        </View>
+        </TouchableOpacity>
     )
 };
 
-const Beneficiaries = () => {
+const Beneficiaries = ({ navigation }) => {
     const favBenificiaries = [
         { title: "Ashley", subTitle: "Bank Transfer", icon: "AS", isIcon: false },
         { title: "Kwasi", subTitle: "Cash Pick Up", icon: "KW", isIcon: false },
         { title: "Add", isIcon: true }
     ];
+
+    // handle navigation
+    const handleNavigate = () => {
+        navigation.navigate(SCREENS.BENEFICIARY_CARD_DETAIL)
+    };
+
+
 
     const allBeneficiaries = [
         {
@@ -123,18 +155,68 @@ const Beneficiaries = () => {
             others: "Zenith Bank, Nigeria",
             image: side_line,
         },
-    ]
+    ];
+
+    const renderBottom = () => {
+        const tabs = [
+            { icon: home_selected, name: "Home" },
+            { icon: profile_icon, name: "Profile" },
+            { icon: help_icon, name: "Help" },
+        ];
+        return (
+            <View style={{
+                height: Metrics.screenHeight * 0.1,
+                width: Metrics.screenWidth,
+                backgroundColor: Colors.white,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                paddingHorizontal: Metrics.screenWidth * 0.1,
+                marginTop: "auto",
+                borderTopLeftRadius: Metrics.ratio(10),
+                borderTopRightRadius: Metrics.ratio(10),
+                shadowColor: '#000',
+                shadowOffset: {
+                    width: 0,
+                    height: 1,
+                },
+                shadowOpacity: 0.14,
+                shadowRadius: 1.27,
+                elevation: 3,
+            }}>
+                {tabs.map((item) => (
+                    <View style={{ alignItems: "center", }}>
+                        <Image
+                            style={{
+                                // width: Metrics.ratio(10),
+                                // height: Metrics.ratio(10),
+                            }}
+                            resizeMethod='auto'
+                            resizeMode='contain'
+                            source={item.icon}
+                        />
+                        <Text style={{
+                            fontFamily: Fonts.type.RobotoRegular,
+                            fontSize: Fonts.size.thirteen,
+                            color: Colors.mantle_grey
+                        }}>{item.name}</Text>
+                    </View>
+                ))}
+            </View>
+        )
+    };
 
 
     return (
         <View style={styles.container}>
-            <View style={styles.beneficiariesContainer}>
-                <Text style={styles.headingText}>Beneficiaries</Text>
-                <Image source={Back_icon}></Image>
-            </View>
+            <CustomHeader heading="Beneficiaries" rightImage={back_arrow} />
             <Text style={styles.favorites}>Favorites</Text>
             <FlatList
-                contentContainerStyle={{ flex: 1, height: Metrics.screenHeight * 0.25, justifyContent: "center" }}
+                contentContainerStyle={{
+                    flex: 1,
+                    height: Metrics.screenHeight * 0.25,
+                    justifyContent: "center",
+                }}
                 horizontal
                 data={favBenificiaries}
                 renderItem={({ item }) =>
@@ -157,13 +239,24 @@ const Beneficiaries = () => {
                             subTitle={item.subTitle}
                             others={item.others}
                             image={item.image}
+                            handleNavigate={handleNavigate}
                         />
                     )
                 }}
             />
+            {renderBottom()}
         </View>
     );
 }
+
+
+Beneficiaries.propTypes = {
+    navigation: PropTypes.shape({
+        replace: PropTypes.func.isRequired,
+        navigate: PropTypes.func.isRequired,
+        dispatch: PropTypes.bool
+    }).isRequired
+};
 
 export default Beneficiaries;
 
