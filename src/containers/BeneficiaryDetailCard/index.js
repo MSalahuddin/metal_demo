@@ -105,7 +105,7 @@ const BeneficiaryCardDetail = ({ navigation }) => {
                         width: Metrics.ratio(15),
                         height: Metrics.ratio(15),
                     }}
-                    onPress={() => handleNavigate()} />
+                    onPress={() => {}} />
                 <Button
                     customBtnStyle={{
                         width: '70%',

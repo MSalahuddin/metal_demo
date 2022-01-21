@@ -173,7 +173,7 @@ const TransferDetail = ({ navigation }) => {
         return (
             <View style={{
                 marginHorizontal: Metrics.screenWidth * 0.05,
-                marginBottom: Metrics.screenHeight * 0.1
+                marginBottom: Metrics.screenHeight * 0.06
             }}>
                 <Text style=
                     {{
