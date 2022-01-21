@@ -16,6 +16,7 @@ import BeneficiaryCardDetail from "./BeneficiaryDetailCard";
 import TransactionDetails from "./TransactionDetails";
 import PaymentForm from "./PaymentForm";
 import TransactionHistory from "./TransactionHistory";
+import TransferDetail  from "./TransferDetails";
 
 export {
     Login,
@@ -35,5 +36,6 @@ export {
     BeneficiaryCardDetail,
     TransactionDetails,
     PaymentForm,
-    TransactionHistory
+    TransactionHistory,
+    TransferDetail
 }

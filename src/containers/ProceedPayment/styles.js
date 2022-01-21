@@ -13,7 +13,7 @@ export default StyleSheet.create({
         backgroundColor: Colors.white,
         paddingVertical: Metrics.ratio(20),
         paddingHorizontal: Metrics.ratio(20),
-        marginTop: "auto",
+        marginTop: Metrics.ratio(30),
         borderTopWidth: Metrics.ratio(2),
         borderTopColor: Colors.greyContent
     },

@@ -13,7 +13,8 @@ const Details = ({ title, subTitle, isBold }) => {
             justifyContent: 'space-between',
             alignItems: 'center',
             flexDirection: 'row',
-            paddingHorizontal: Metrics.ratio(20)
+            paddingHorizontal: Metrics.ratio(20),
+            paddingVertical:  Metrics.ratio(10),
         }}>
             <Text style={{
                 fontFamily: Fonts.type.RobotoRegular,
@@ -35,13 +36,19 @@ const TransferProcessed = () => {
         { title: "Beneficiary Name", subTitle: "Ashley Farmer", isBold: false },
         { title: "Account Number", subTitle: "416 512 978 4562", isBold: false },
         { title: "Bank", subTitle: "Zenith Bank, Nigeria", isBold: false },
-        { title: "paid Amount", subTitle: "USD 503.00", isBold: true }
+        { title: "Paid Amount", subTitle: "USD 503.00", isBold: true }
     ];
     return (
         <View style={styles.container}>
             <View style={styles.heading}>
                 <Text style={styles.headingText}>Congratulations</Text>
                 <Text style={styles.text}>Your transfer has been processed</Text>
+            </View>
+            <View style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginVertical: Metrics.ratio(20)
+            }}>
                 <Image style={styles.image} source={Success_icon} />
             </View>
             <View style={styles.amounts}>

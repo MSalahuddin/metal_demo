@@ -50,6 +50,8 @@ const transfer = require("./transfer.png");
 const chevron_right = require("./chevron_right.png");
 const Calendar = require("./Calendar.png");
 const filter = require("./filter.png");
+const credit_card =  require("./credit_card.png");
+const interview =  require("./interview.png");
 
 export {
     bg_half,
@@ -103,5 +105,7 @@ export {
     transfer,
     chevron_right,
     Calendar,
-    filter
+    filter,
+    credit_card,
+    interview
 }

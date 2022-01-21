@@ -3,21 +3,25 @@ import { View, Text, Image, ImageBackground, TouchableOpacity } from "react-nati
 import PropTypes from 'prop-types';
 import { Fonts, Metrics, Colors } from "../../theme";
 import styles from "./styles";
-import { Card, 
-    edit, 
-    deleteIcon, 
-    back_arrow, 
-    transfer, 
+import {
+    Card,
+    edit,
+    deleteIcon,
+    back_arrow,
+    transfer,
     chevron_right,
     home_selected,
     profile_icon,
-    help_icon } from "../../assets/images"
+    help_icon,
+    credit_card,
+    interview
+} from "../../assets/images"
 import { Button, CustomHeader } from "../../components";
-import { proceedPayment } from "../../constant/stringConstants";
+import { proceedPayment, home } from "../../constant/stringConstants";
 import { SCREENS } from "../../constant/constant";
 
 
-const BeneficiaryCardDetail = ({ navigation }) => {
+const TransferDetail = ({ navigation }) => {
 
     const cardDetails = [
         {
@@ -36,7 +40,7 @@ const BeneficiaryCardDetail = ({ navigation }) => {
 
     // handle navigation
     const handleNavigate = () => {
-        navigation.navigate(SCREENS.TRANSFER_DETAIL)
+        navigation.navigate(SCREENS.PROCEED_PAYMENT)
     };
 
     const rednerCardDetails = () => {
@@ -91,11 +95,10 @@ const BeneficiaryCardDetail = ({ navigation }) => {
                     customBtnStyle={{
                         width: '90%',
                         marginTop: Metrics.ratio(30),
-                        marginBottom: Metrics.ratio(35),
                         backgroundColor: Colors.dardBlue
                     }}
-                    btnText={proceedPayment.transferHistory}
-                    leftIcon={transfer}
+                    btnText={"Select Purpose"}
+                    // leftIcon={transfer}
                     rightIcon={chevron_right}
                     customRightIcon={{
                         width: Metrics.ratio(15),
@@ -105,14 +108,14 @@ const BeneficiaryCardDetail = ({ navigation }) => {
                         width: Metrics.ratio(15),
                         height: Metrics.ratio(15),
                     }}
-                    onPress={() => handleNavigate()} />
-                <Button
+                    onPress={() => { }} />
+                {/* <Button
                     customBtnStyle={{
                         width: '70%',
                         marginBottom: Metrics.ratio(35),
                     }}
                     btnText={proceedPayment.btnText}
-                    onPress={() => handleNavigate()} />
+                    onPress={() => handleNavigate()} /> */}
             </View>
         )
     }
@@ -164,19 +167,72 @@ const BeneficiaryCardDetail = ({ navigation }) => {
                 ))}
             </View>
         )
-    }
+    };
+
+    const renderSelection = () => {
+        return (
+            <View style={{
+                marginHorizontal: Metrics.screenWidth * 0.05,
+                marginBottom: Metrics.screenHeight * 0.1
+            }}>
+                <Text style=
+                    {{
+                        fontFamily: Fonts.type.RobotoRegular,
+                        fontSize: Fonts.size.eighteen,
+                        color: Colors.secondaryBtnText,
+                        marginTop: Metrics.ratio(10)
+                    }}>
+                    {"How do you want to pay?"}
+                </Text>
+                <View style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginVertical: Metrics.ratio(20)
+                }}>
+                    <TouchableOpacity style={styles.selectButon} onPress={() => { handleNavigate() }}>
+                        <Image style={{
+                            // width: Metrics.ratio(27), height: Metrics.ratio(27)
+                        }} source={credit_card} />
+                        <Text style={
+                            {
+                                fontFamily: Fonts.type.RobotoMedium,
+                                fontSize: Fonts.size.thirteen,
+                                color: Colors.mantle_grey,
+                                marginTop: Metrics.ratio(8)
+                            }
+                        }>{"Pay by Card"}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.selectButon}>
+                        <Image style={{
+                            // width: Metrics.ratio(27), height: Metrics.ratio(27)
+                        }} source={interview} />
+                        <Text style={
+                            {
+                                fontFamily: Fonts.type.RobotoMedium,
+                                fontSize: Fonts.size.thirteen,
+                                color: Colors.mantle_grey,
+                                marginTop: Metrics.ratio(8)
+                            }
+                        }>{"Cash at Agent"}</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        )
+    };
 
     return (
         <View style={styles.container}>
-            <CustomHeader heading="Beneficiary" rightImage={back_arrow} />
+            <CustomHeader heading="Transfer" rightImage={back_arrow} />
             {rednerCardDetails()}
             {renderButtons()}
+            {renderSelection()}
             {renderBottom()}
         </View>
     );
 }
 
-BeneficiaryCardDetail.propTypes = {
+TransferDetail.propTypes = {
     navigation: PropTypes.shape({
         replace: PropTypes.func.isRequired,
         navigate: PropTypes.func.isRequired,
@@ -185,4 +241,4 @@ BeneficiaryCardDetail.propTypes = {
 };
 
 
-export default BeneficiaryCardDetail;
+export default TransferDetail;

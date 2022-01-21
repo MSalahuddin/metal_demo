@@ -252,7 +252,6 @@ const TransferDetails = ({
 }
 
 const TransactionDetails = () => {
-
     return (
         <View style={styles.container}>
             <View style={styles.subContainer}>

@@ -27,8 +27,8 @@ export default StyleSheet.create({
         marginVertical: Metrics.ratio(10),
     },
     favorites: {
+        fontFamily: Fonts.type.RobotoRegular,
         fontSize: Fonts.size.eighteen,
-        fontWeight: '600',
         color: Colors.placeholderContent,
         marginVertical: Metrics.ratio(25),
         marginHorizontal: Metrics.ratio(20),

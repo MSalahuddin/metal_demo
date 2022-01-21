@@ -1,69 +1,87 @@
-import React, {useState} from "react";
-import {View, Text, Image, TouchableOpacity} from "react-native";
-import DatePicker from 'react-native-datepicker'
+import React, { useState } from "react";
+import { View, Text, Image, TouchableOpacity, TextInput } from "react-native";
+import DatePicker from 'react-native-datepicker';
+import PropTypes from 'prop-types';
+
 import { Fonts, Metrics, Colors } from "../../theme";
 import styles from "./styles";
-import {Calendar, next_icon, back_arrow} from "../../assets/images"
-import {Button, CustomHeader, CustomTextInput} from "../../components";
-import {proceedPayment} from "../../constant/stringConstants";
+import { Calendar, next_icon, back_arrow } from "../../assets/images"
+import { Button, CustomHeader, CustomTextInput } from "../../components";
+import { proceedPayment } from "../../constant/stringConstants";
+import { SCREENS } from "../../constant/constant";
 
-const PaymentForm = () => {
+const PaymentForm = ({ navigation }) => {
     const [visa, setVisa] = useState(null);
-    const [name, setName]  = useState(null);
-    const [cardNumber, setCardNumber]  = useState(null);
+    const [name, setName] = useState(null);
+    const [cardNumber, setCardNumber] = useState(null);
     const [date, setDate] = useState(null);
     const [cvc, setCVC] = useState(null);
 
-    const  renderInput = ({
-        topLabelText, 
-        inputRightIcon, 
-        placeholder, 
-        value, 
-        setValue, 
+    // handle navigation
+    const handleNavigate = () => {
+        navigation.navigate(SCREENS.TRANSFER_PROCESSED)
+    };
+
+
+    const renderInput = ({
+        topLabelText,
+        inputRightIcon,
+        placeholder,
+        value,
+        setValue,
         containerWidth
     }) => {
-        return(
-            <CustomTextInput
-                placeholderTextColor={Colors.greyContent}
-                customContainerStyle={[
-                    styles.inputContainer,
-                    {width: containerWidth ? containerWidth : "90%"}
-                ]}
-                customInputStyle = {{
-                    height: Metrics.ratio(20),
-                    borderBottomWidth: 0,
-                    borderBottomColor: Colors.transparent,
-                }}
-                topLabelText = {topLabelText}
-                inputRightIcon = {inputRightIcon}
-                TextInputPaddingStyle = {{
-                    bottom: -5
-                }}
-                enablesReturnKeyAutomaticallly={true}
-                placeholder={placeholder}
-                editable={true}
-                value={value}
-                onChangeInput={(value) => setValue(value)}
-            />
+        return (
+            // <View style={[styles.inputContainer,
+            // {
+            //     width: containerWidth ? containerWidth : "90%",
+            //     backgroundColor: "red"
+            // }]}>
+                 <CustomTextInput
+                    placeholderTextColor={Colors.greyContent}
+                    customContainerStyle={[
+                        styles.inputContainer,
+                        {
+                            width: containerWidth ? containerWidth : "90%",
+                        }
+                    ]}
+                    customInputStyle={{
+                        height: Metrics.ratio(40),
+                        borderBottomWidth: 0,
+                        borderBottomColor: Colors.transparent,
+                    }}
+                    topLabelText={topLabelText}
+                    inputRightIcon={inputRightIcon}
+                    enablesReturnKeyAutomaticallly={true}
+                    placeholder={placeholder}
+                    editable={true}
+                    value={value}
+                    onChangeInput={(value) => setValue(value)}
+
+                />
+            // </View>
+
         )
     }
 
     const renderDatePicker = () => {
-        return(
-            <View style = {{
-                borderWidth: Metrics.ratio(1), 
+        return (
+            <View style={{
+                borderWidth: Metrics.ratio(1),
                 borderColor: Colors.inputBorder,
                 borderRadius: Metrics.ratio(5),
                 paddingHorizontal: Metrics.ratio(15),
                 paddingTop: Metrics.ratio(15),
-                height: Metrics.ratio(70)}}>
-                    <Text style = {{
-                         fontFamily: Fonts.type.RobotoRegular,
-                         fontSize: Fonts.size.twelve,
-                         color: Colors.mantle_grey
-                    }}>
-                        Expiry Date
-                    </Text>
+                height: Metrics.ratio(70),
+                marginRight: Metrics.screenWidth * 0.05
+            }}>
+                <Text style={{
+                    fontFamily: Fonts.type.RobotoRegular,
+                    fontSize: Fonts.size.twelve,
+                    color: Colors.mantle_grey
+                }}>
+                    Expiry Date
+                </Text>
                 <DatePicker
                     confirmBtnText={'Confirm'}
                     cancelBtnText={'Cancel'}
@@ -81,12 +99,12 @@ const PaymentForm = () => {
                     placeholder="Date of Birth"
                     customStyles={{
                         placeholderText: {
-                        color: '#BBBBBB',
-                        fontFamily: Fonts.type.RobotoRegular,
+                            color: '#BBBBBB',
+                            fontFamily: Fonts.type.RobotoRegular,
                         },
                         dateInput: {
-                        borderWidth: 0,
-                        left: -27,
+                            borderWidth: 0,
+                            left: -27,
                         },
                     }}
                 />
@@ -95,8 +113,8 @@ const PaymentForm = () => {
     }
 
     const renderFields = () => {
-        return(
-            <View style = {{alignItems: "center"}}>
+        return (
+            <View style={{ alignItems: "center" }}>
                 {renderInput({
                     topLabelText: "Select Payment Gateway",
                     inputRightIcon: next_icon,
@@ -118,33 +136,43 @@ const PaymentForm = () => {
                     value: cardNumber,
                     setValue: setCardNumber
                 })}
-                <View style = {{flexDirection: "row"}}>
+                <View style={{ flexDirection: "row" }}>
                     {renderDatePicker()}
                     {renderInput({
-                    topLabelText: "CVV Code",
-                    inputRightIcon: null,
-                    placeholder: "226",
-                    value: cvc,
-                    setValue: setCVC,
-                    containerWidth: "40%"
+                        topLabelText: "CVV Code",
+                        inputRightIcon: null,
+                        placeholder: "226",
+                        value: cvc,
+                        setValue: setCVC,
+                        containerWidth: "40%"
                     })}
                 </View>
             </View>
         )
     }
-    return(
-        <View style = {styles.container}> 
-            <CustomHeader heading="Payment Methods" rightImage = {back_arrow}/>
+    return (
+        <View style={styles.container}>
+            <CustomHeader heading="Payment" rightImage={back_arrow} />
             {renderFields()}
-           <View style = {{flex: 1, alignItems: "center",}}>
+            <View style={{ flex: 1, alignItems: "center", }}>
                 <Button
                     customBtnStyle={{ width: '70%', marginBottom: Metrics.ratio(35) }}
                     btnText={"Confirm"}
-                    onPress={() => {  }}
+                    onPress={() => handleNavigate()}
                 />
-           </View>
+            </View>
         </View>
     );
 }
+
+
+PaymentForm.propTypes = {
+    navigation: PropTypes.shape({
+        replace: PropTypes.func.isRequired,
+        navigate: PropTypes.func.isRequired,
+        dispatch: PropTypes.bool
+    }).isRequired
+};
+
 
 export default PaymentForm;

@@ -11,7 +11,7 @@ export default StyleSheet.create({
         borderColor: Colors.inputBorder,
         borderRadius: Metrics.ratio(5),
         paddingHorizontal: Metrics.ratio(15),
-        paddingVertical: Metrics.ratio(15),
+        paddingTop: Metrics.ratio(15),
         marginBottom: Metrics.ratio(20)
     },
     customDateIcon: {
