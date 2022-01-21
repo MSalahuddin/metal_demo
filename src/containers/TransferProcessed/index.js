@@ -75,12 +75,17 @@ const TransferProcessed = () => {
             />
 
             <View style={styles.buttonContainer} >
-
                 <Button
-                    customBtnStyle={{ width: Metrics.ratio("80%"), marginBottom: Metrics.ratio(20) }}
-                    textStyle={{ fontFamily: Fonts.type.RobotoRegular, fontSize: Fonts.size.large }}
+                    customBtnStyle={{
+                         width: Metrics.screenWidth * 0.8,
+                         marginBottom: Metrics.ratio(20) }}
+                    textStyle={{ 
+                        fontFamily: Fonts.type.RobotoRegular, 
+                        fontSize: Fonts.size.large }}
                     leftIcon={share}
-                    customLeftIcon={{ marginLeft: Metrics.ratio(70), width: Metrics.ratio("80%"), height: Metrics.ratio("80%"), marginVertical: Metrics.ratio(2) }}
+                    customLeftIcon={{ 
+                        marginLeft: Metrics.ratio(70), 
+                        marginVertical: Metrics.ratio(2) }}
                     btnText={AuthString.ButtonText.share} />
             </View>
 

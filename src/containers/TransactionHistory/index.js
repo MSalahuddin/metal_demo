@@ -8,33 +8,29 @@ import {Button, CustomHeader, CustomTextInput} from "../../components";
 import {proceedPayment} from "../../constant/stringConstants";
 
 const TransactionHistory = () => {
+    const [activeFilterIndex, setActiveFilterIndex] = useState(0);
     const renderFilters = () => {
         const filters = ["All", "Send", "Pending", "Failed"];
-
         return(
-            <View style = {{flexDirection: "row", width: Metrics.screenWidth * 0.9}}>
-                <View style = {{
-                    width: "82%", 
-                    flexDirection: "row",
-                    backgroundColor: "red"}}>
+            <View style = {styles.filters}>
+                <View style = {styles.filterBtnContainer}>
                     {
-                        filters.map((filter) => 
-                            <TouchableOpacity style = {{
-                                justifyContent: "center",
-                                alignItems: "center",
-                                backgroundColor: "green"
-                                }}>
-                                <Text>{filter}</Text>
+                        filters.map((filter, index) => 
+                            <TouchableOpacity style = {[
+                               styles.filterBtn,
+                                activeFilterIndex === index && styles.activeFilterBtn]}
+                                onPress={() => setActiveFilterIndex(index)}>
+                                <Text style = {{
+                                    fontSize: Fonts.size.twelve,
+                                    fontFamily: Fonts.type.RobotoRegular,
+                                    color: Colors.placeholderContent
+                                }}>{filter}</Text>
                             </TouchableOpacity>
                         
                             )
                     }
                 </View>
-                <View style = {{
-                    width: "15%", 
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "green"}}>
+                <View style = {styles.filterImageContainer}>
                         <Image source={filter}/>
                 </View>
             </View>

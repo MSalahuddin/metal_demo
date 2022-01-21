@@ -17,6 +17,7 @@ import TransactionDetails from "./TransactionDetails";
 import PaymentForm from "./PaymentForm";
 import TransactionHistory from "./TransactionHistory";
 import TransferDetail  from "./TransferDetails";
+import AccountInformation from "./AccountInformation";
 
 export {
     Login,
@@ -37,5 +38,6 @@ export {
     TransactionDetails,
     PaymentForm,
     TransactionHistory,
-    TransferDetail
+    TransferDetail,
+    AccountInformation
 }

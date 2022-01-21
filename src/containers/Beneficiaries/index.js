@@ -66,14 +66,13 @@ const AllBeneficiaries = ({ image, title, subTitle, others, handleNavigate }) =>
     return (
         <TouchableOpacity
             style={{
-                width: Metrics.ratio("100%"),
-                height: Metrics.ratio(70),
                 backgroundColor: Colors.white,
-                alignItems: 'center',
-                flexDirection: "row",
+                height: Metrics.screenHeight * 0.12,
                 borderBottomColor: Colors.greyContent,
                 borderBottomWidth: Metrics.ratio(1),
-                paddingHorizontal: Metrics.ratio(15),
+                flexDirection: "row",
+                alignItems: 'center',
+                paddingHorizontal: Metrics.ratio(20)
             }}
             onPress={() => handleNavigate()}
         >

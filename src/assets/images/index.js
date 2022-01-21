@@ -52,6 +52,7 @@ const Calendar = require("./Calendar.png");
 const filter = require("./filter.png");
 const credit_card =  require("./credit_card.png");
 const interview =  require("./interview.png");
+const bar3 = requrire("./bar3.png");
 
 export {
     bg_half,
@@ -107,5 +108,6 @@ export {
     Calendar,
     filter,
     credit_card,
-    interview
+    interview,
+    bar3
 }

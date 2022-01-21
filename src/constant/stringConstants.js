@@ -49,6 +49,10 @@ export const AuthString = {
     }
 };
 
+export const beneficiaryForm = {
+    accountInformation: "Account Information"
+};
+
 export const proceedPayment = {
       btnText: "Proceed to Send",
       transferHistory: "Transfer History"
