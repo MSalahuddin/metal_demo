@@ -19,7 +19,7 @@ import { SCREENS } from '../../constant/constant';
 const AppStack = createStackNavigator();
 const AppStackScreen = () => {
   return (
-    <AppStack.Navigator headerMode="none" initialRouteName={SCREENS.TRANSACTION_DETAILS}>
+    <AppStack.Navigator headerMode="none" initialRouteName={SCREENS.SELECT_PURPOSE}>
       <AppStack.Screen name={SCREENS.HOME} component={Home} />
       <AppStack.Screen name= {SCREENS.SELECT_PURPOSE} component={SelectPurpose} />
       <AppStack.Screen name= {SCREENS.BENEFICIARIES} component={Beneficiaries} />

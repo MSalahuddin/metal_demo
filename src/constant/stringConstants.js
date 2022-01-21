@@ -51,7 +51,7 @@ export const AuthString = {
 
 export const proceedPayment = {
       btnText: "Proceed to Send",
-      transferHistory: "Transfer History"      
+      transferHistory: "Transfer History"
 };
 
 export const onboarding = {
