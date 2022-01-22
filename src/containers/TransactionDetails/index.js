@@ -43,12 +43,12 @@ const PersonalDetails = ({ title, subTitle, others }) => {
                 }}>
                     <Text style={{
                         fontFamily: Fonts.type.RobotoMedium,
-                        fontSize: Fonts.size.large,
+                        fontSize: Fonts.size.xLarge,
                         color: Colors.placeholderContent,
                     }}>{title}</Text>
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
                     }}>{subTitle}</Text>
                     <Text style={{
@@ -64,6 +64,7 @@ const PersonalDetails = ({ title, subTitle, others }) => {
                 alignItems: 'center',
                 borderBottomLeftRadius: Metrics.ratio(20),
                 borderBottomRightRadius: Metrics.ratio(20),
+
             }}>
                 <View style={{
                     backgroundColor: Colors.primaryBtn,
@@ -71,7 +72,7 @@ const PersonalDetails = ({ title, subTitle, others }) => {
                     height: Metrics.ratio(45),
                     borderRadius: Metrics.ratio(30),
                     marginHorizontal: Metrics.ratio(20),
-                    marginVertical: Metrics.ratio(5),
+                    marginVertical: Metrics.ratio(10),
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
@@ -111,14 +112,14 @@ const TransferDetails = ({
             elevation: 5,
             borderRadius: Metrics.ratio(20),
             marginHorizontal: Metrics.ratio(20),
-            marginVertical: Metrics.ratio(10),
-            marginBottom: Metrics.ratio(30),
+            marginVertical: Metrics.ratio(15),
+            marginBottom: Metrics.ratio(20),
         }}>
             <View style={{
                 flexDirection: 'row',
             }}>
                 <View style={{
-                    width: Metrics.ratio(60),
+                    width: Metrics.ratio(70),
                     height: Metrics.ratio(90),
                     borderRadius: Metrics.ratio(10),
                     marginHorizontal: Metrics.ratio(20),
@@ -148,7 +149,7 @@ const TransferDetails = ({
                 }}>
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContentWithOpacity,
                     }}>{title}</Text>
                     <Text style={{
@@ -158,18 +159,19 @@ const TransferDetails = ({
                     }}>{subTitle}</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Image style={{
-                            height: Metrics.ratio("95%"),
+                            height: Metrics.ratio("93%"),
+                            marginRight: Metrics.ratio(5),
                         }} source={image} />
                         <View>
                             <Text style={{
                                 fontFamily: Fonts.type.RobotoRegular,
                                 color: Colors.placeholderContent,
-                                fontSize: Fonts.size.fourteen,
+                                fontSize: Fonts.size.sixteen,
                             }}>{id}</Text>
                             <Text style={{
                                 fontFamily: Fonts.type.RobotoRegular,
                                 color: Colors.placeholderContentWithOpacity,
-                                fontSize: Fonts.size.fourteen,
+                                fontSize: Fonts.size.sixteen,
                             }}>{num}</Text>
                         </View>
                     </View>
@@ -177,73 +179,82 @@ const TransferDetails = ({
             </View>
 
             <View style={{
-                flex: 5,
                 justifyContent: 'space-between',
                 flexDirection: 'row',
                 marginHorizontal: Metrics.ratio(20),
-                marginBottom: Metrics.ratio(5),
+                marginBottom: Metrics.ratio(10),
             }}>
                 <View>
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContentWithOpacity,
+                        marginBottom: Metrics.ratio(5),
                     }}>{info}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContentWithOpacity,
+                        marginBottom: Metrics.ratio(5),
                     }}>{email}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{paidAmount}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{sentAmount}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{transferAmount}</Text>
                 </View>
 
                 <View style={{ alignItems: 'flex-end', }}>
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{detail}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoRegular,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{emailID}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoMedium,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{amount}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoMedium,
-                        fontSize: Fonts.size.fourteen,
+                        fontSize: Fonts.size.sixteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{sendedAmount}</Text>
 
                     <Text style={{
                         fontFamily: Fonts.type.RobotoMedium,
                         fontSize: Fonts.size.fourteen,
                         color: Colors.placeholderContent,
+                        marginBottom: Metrics.ratio(5),
                     }}>{transferdAmount}</Text>
                 </View>
             </View>
@@ -291,6 +302,7 @@ const TransactionDetails = () => {
                 </View>
             </ScrollView>
         </View>
-    )}
+    )
+}
 
 export default TransactionDetails;

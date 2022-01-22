@@ -52,6 +52,21 @@ const Calendar = require("./Calendar.png");
 const filter = require("./filter.png");
 const credit_card =  require("./credit_card.png");
 const interview =  require("./interview.png");
+const bar1 = require("./bar1.png");
+const map = require("./map.png");
+const smartphone = require("./smartphone.png");
+const bank_transfer = require("./bank_transfer.png");
+const transfer_money = require("./transfer_money.png");
+const avatar1 = require("./avatar/avatar1.png");
+const avatar4 = require("./avatar/avatar4.png");
+const avatar5 = require("./avatar/avatar5.png");
+const avatar6 = require("./avatar/avatar6.png");
+const avatar7 = require("./avatar/avatar7.png");
+const avatar8 = require("./avatar/avatar8.png");
+const avatar9 = require("./avatar/avatar9.png");
+const view_all = require("./view_all.png");
+const add_avatar = require("./avatar/add_avatar.png");
+const bar2 = require("./bar2.png");
 
 export {
     bg_half,
@@ -107,5 +122,20 @@ export {
     Calendar,
     filter,
     credit_card,
-    interview
+    interview,
+    bar1,
+    map,
+    smartphone,
+    bank_transfer,
+    transfer_money,
+    avatar1,
+    avatar4,
+    avatar5,
+    avatar6,
+    avatar7,
+    avatar8,
+    avatar9,
+    view_all,
+    add_avatar,
+    bar2,
 }

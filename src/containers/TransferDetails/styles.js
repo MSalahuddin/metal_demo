@@ -67,7 +67,7 @@ export default StyleSheet.create({
     },
     selectButon: {
         height: Metrics.screenHeight * 0.11,
-        width: Metrics.screenWidth * 0.35,
+        width: Metrics.screenWidth * 0.33,
         borderRadius: Metrics.ratio(10),
         justifyContent: "center",
         alignItems: "center",

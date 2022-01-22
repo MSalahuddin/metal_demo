@@ -20,8 +20,10 @@ import { SCREENS } from "../../constant/constant";
 const FavoriteBeneficiaries = ({ title, subTitle, icon, isIcon }) => {
     return (
         <View style={{
+            // flex: 1,
+            // flexDirection: 'row',
             width: Metrics.ratio(100),
-            height: "70%",
+            height: "75%",
             backgroundColor: Colors.white,
             borderRadius: Metrics.ratio(10),
             alignItems: 'center',
@@ -214,7 +216,7 @@ const Beneficiaries = ({ navigation }) => {
             <FlatList
                 contentContainerStyle={{
                     flex: 1,
-                    height: Metrics.screenHeight * 0.25,
+                    height: Metrics.screenHeight * 0.26,
                     justifyContent: "center",
                 }}
                 horizontal

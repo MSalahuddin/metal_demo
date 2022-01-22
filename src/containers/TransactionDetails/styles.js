@@ -9,7 +9,7 @@ export default StyleSheet.create({
     subContainer: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        marginVertical: Metrics.ratio(25),
+        marginVertical: Metrics.ratio(20),
         marginHorizontal: Metrics.ratio(20),
     },
     heading: {

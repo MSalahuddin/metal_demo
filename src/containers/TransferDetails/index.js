@@ -49,7 +49,7 @@ const TransferDetail = ({ navigation }) => {
                 resizeMode="contain"
                 style={styles.cardContainer}
                 source={Card}>
-                <View style={styles.cardHeader}>
+                {/* <View style={styles.cardHeader}>
                     <View style={styles.avatarContainer}>
                         <Text style={styles.avatarText}>AS</Text>
                     </View>
@@ -66,7 +66,7 @@ const TransferDetail = ({ navigation }) => {
                             <Image source={deleteIcon} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </View> */}
                 <View>
                     <Text style={styles.userName}>Ashley</Text>
                     {cardDetails.map((item) => {
@@ -90,11 +90,11 @@ const TransferDetail = ({ navigation }) => {
 
     const renderButtons = () => {
         return (
-            <View style={{ flex: 1, alignItems: "center" }}>
+            <View style={{ alignItems: "center" }}>
                 <Button
                     customBtnStyle={{
                         width: '90%',
-                        marginTop: Metrics.ratio(30),
+                        marginTop: Metrics.ratio(15),
                         backgroundColor: Colors.dardBlue
                     }}
                     btnText={"Select Purpose"}
@@ -180,7 +180,7 @@ const TransferDetail = ({ navigation }) => {
                         fontFamily: Fonts.type.RobotoRegular,
                         fontSize: Fonts.size.eighteen,
                         color: Colors.secondaryBtnText,
-                        marginTop: Metrics.ratio(10)
+                        marginTop: Metrics.ratio(-5)
                     }}>
                     {"How do you want to pay?"}
                 </Text>
