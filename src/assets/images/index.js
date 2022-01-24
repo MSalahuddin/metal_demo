@@ -67,6 +67,7 @@ const avatar9 = require("./avatar/avatar9.png");
 const view_all = require("./view_all.png");
 const add_avatar = require("./avatar/add_avatar.png");
 const bar2 = require("./bar2.png");
+const bar3 = requrire("./bar3.png");
 
 export {
     bg_half,
@@ -138,4 +139,5 @@ export {
     view_all,
     add_avatar,
     bar2,
+    bar3,
 }

@@ -34,7 +34,9 @@ const mineShaft = "#222222";
 const avatarNameContainer = "rgba(0, 0, 0, 0.4)";
 const silver = "#E9E9E9";
 const dardBlue = "rgba(0, 30, 62, 1)";
-const inputBorder  = "rgba(179, 180, 180, 1)"
+const inputBorder  = "rgba(179, 180, 180, 1)";
+const activeFilter = "rgba(236, 238, 247, 1)";
+const  inactiveFilter = "rgba(233, 233, 233, 1)"
 // app theme colors
 
 // ====================================================
@@ -67,5 +69,7 @@ export default {
   avatarNameContainer,
   silver,
   dardBlue,
-  inputBorder
+  inputBorder,
+  activeFilter,
+  inactiveFilter 
 };

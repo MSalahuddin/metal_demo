@@ -19,6 +19,8 @@ import TransactionHistory from "./TransactionHistory";
 import TransferDetail  from "./TransferDetails";
 import AddBeneficiary from "./AddBeneficiary";
 import BeneficiaryPicture from "./BeneficiaryPicture";
+import AccountInformation from "./AccountInformation";
+
 export {
     Login,
     OTP,
@@ -41,4 +43,5 @@ export {
     TransferDetail,
     AddBeneficiary,
     BeneficiaryPicture,
+    AccountInformation,
 }

@@ -32,35 +32,28 @@ const PaymentForm = ({ navigation }) => {
         containerWidth
     }) => {
         return (
-            // <View style={[styles.inputContainer,
-            // {
-            //     width: containerWidth ? containerWidth : "90%",
-            //     backgroundColor: "red"
-            // }]}>
-                 <CustomTextInput
-                    placeholderTextColor={Colors.greyContent}
-                    customContainerStyle={[
-                        styles.inputContainer,
-                        {
-                            width: containerWidth ? containerWidth : "90%",
-                        }
-                    ]}
-                    customInputStyle={{
-                        height: Metrics.ratio(40),
-                        borderBottomWidth: 0,
-                        borderBottomColor: Colors.transparent,
-                    }}
-                    topLabelText={topLabelText}
-                    inputRightIcon={inputRightIcon}
-                    enablesReturnKeyAutomaticallly={true}
-                    placeholder={placeholder}
-                    editable={true}
-                    value={value}
-                    onChangeInput={(value) => setValue(value)}
+            <CustomTextInput
+               placeholderTextColor={Colors.greyContent}
+               customContainerStyle={[
+                   styles.inputContainer,
+                   {
+                       width: containerWidth ? containerWidth : "90%",
+                   }
+               ]}
+               customInputStyle={{
+                   height: Metrics.ratio(40),
+                   borderBottomWidth: 0,
+                   borderBottomColor: Colors.transparent,
+               }}
+               topLabelText={topLabelText}
+               inputRightIcon={inputRightIcon}
+               enablesReturnKeyAutomaticallly={true}
+               placeholder={placeholder}
+               editable={true}
+               value={value}
+               onChangeInput={(value) => setValue(value)}
 
-                />
-            // </View>
-
+           />
         )
     }
 
