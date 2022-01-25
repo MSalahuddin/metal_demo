@@ -19,17 +19,7 @@ import { SCREENS } from "../../constant/constant";
 
 const FavoriteBeneficiaries = ({ title, subTitle, icon, isIcon }) => {
     return (
-        <View style={{
-            // flex: 1,
-            // flexDirection: 'row',
-            width: Metrics.ratio(100),
-            height: "75%",
-            backgroundColor: Colors.white,
-            borderRadius: Metrics.ratio(10),
-            alignItems: 'center',
-            marginRight: Metrics.ratio(9),
-            elevation: 3,
-        }}>
+        <View style={styles.favBeneficiaries}>
             <View style={{
                 width: Metrics.ratio(50),
                 height: Metrics.ratio(50),

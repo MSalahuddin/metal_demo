@@ -39,5 +39,27 @@ export default StyleSheet.create({
         shadowOpacity: 0.14,
         shadowRadius: 1.27,
         elevation: 3,
-    }
+    },
+    text: {
+        fontFamily: Fonts.type.RobotoRegular,
+        fontSize: Fonts.size.twelve,
+        color: Colors.mantle_grey,
+        marginTop: Metrics.ratio(5)
+    },
+    selectOption: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginVertical: Metrics.ratio(20)
+    },
+    selectOptionContainer: {
+        marginHorizontal: Metrics.screenWidth * 0.05,
+        marginBottom: Metrics.screenHeight * 0.06,
+    },
+    selectOptionHeading: {
+        fontFamily: Fonts.type.RobotoRegular,
+        fontSize: Fonts.size.eighteen,
+        color: Colors.secondaryBtnText,
+        marginTop: Metrics.ratio(15)
+    },
 })

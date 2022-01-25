@@ -20,6 +20,15 @@ export default StyleSheet.create({
         marginHorizontal: Metrics.ratio(25),
         marginVertical: Metrics.ratio(10),
     },
+    favBeneficiaries: {
+        width: Metrics.ratio(100),
+        height: "75%",
+        backgroundColor: Colors.white,
+        borderRadius: Metrics.ratio(10),
+        alignItems: 'center',
+        marginRight: Metrics.ratio(9),
+        elevation: 3,
+    },
     favorites: {
         fontFamily: Fonts.type.RobotoRegular,
         fontSize: Fonts.size.eighteen,

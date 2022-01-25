@@ -64,10 +64,25 @@ const avatar6 = require("./avatar/avatar6.png");
 const avatar7 = require("./avatar/avatar7.png");
 const avatar8 = require("./avatar/avatar8.png");
 const avatar9 = require("./avatar/avatar9.png");
+const avatar10 = require("./avatar/avatar10.png");
+const avatar11 = require("./avatar/avatar11.png");
+const avatar12 = require("./avatar/avatar12.png");
+const avatar13 = require("./avatar/avatar13.png");
+const avatar14 = require("./avatar/avatar14.png");
+const avatar15 = require("./avatar/avatar15.png");
+const avatar16 = require("./avatar/avatar16.png");
+const avatar17 = require("./avatar/avatar17.png");
+const avatar18 = require("./avatar/avatar18.png");
+const avatar19 = require("./avatar/avatar19.png");
+const avatar20 = require("./avatar/avatar20.png");
+const avatar21 = require("./avatar/avatar21.png");
+const avatar22 = require("./avatar/avatar22.png");
+const avatar23 = require("./avatar/avatar23.png");
+const avatarGroup1 = require("./avatar/avatarGroup1.png");
 const view_all = require("./view_all.png");
 const add_avatar = require("./avatar/add_avatar.png");
 const bar2 = require("./bar2.png");
-const bar3 = requrire("./bar3.png");
+const bar3 = require("./bar3.png");
 
 export {
     bg_half,
@@ -136,6 +151,21 @@ export {
     avatar7,
     avatar8,
     avatar9,
+    avatar10,
+    avatar11,
+    avatar12,
+    avatar13,
+    avatar14,
+    avatar15,
+    avatar16,
+    avatar17,
+    avatar18,
+    avatar19,
+    avatar20,
+    avatar21,
+    avatar22,
+    avatar23,
+    avatarGroup1,
     view_all,
     add_avatar,
     bar2,

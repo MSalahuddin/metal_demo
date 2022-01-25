@@ -11,6 +11,7 @@ import CountryPickerModal from "./CountryPickerModal";
 import EnterYourPassword from './EnterYourPassword';
 import CustomTabView from './TabView';
 import CustomHeader from './CustomHeader';
+import ModalTemplate from './ModalTemplate';
 
 export {
   Button,
@@ -25,5 +26,6 @@ export {
   CountryPickerModal,
   EnterYourPassword,
   CustomTabView,
-  CustomHeader
+  CustomHeader,
+  ModalTemplate,
 };

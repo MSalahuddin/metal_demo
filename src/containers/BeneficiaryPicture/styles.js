@@ -6,7 +6,8 @@ export default StyleSheet.create({
         backgroundColor: Colors.grey,
     },
     subContainer: {
-        marginHorizontal: Metrics.ratio(20),
+        marginHorizontal: Metrics.screenWidth * 0.05,
+
     },
     text: {
         fontFamily: Fonts.type.RobotoRegular,
@@ -25,9 +26,11 @@ export default StyleSheet.create({
     },
     avatarContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: Metrics.ratio(20),
+        marginVertical: Metrics.ratio(5),
+        // width: Metrics.screenWidth * 0.9,
+        justifyContent: "space-between",
+        alignItems: "center",
     },
     viewAll: {
         width: Metrics.ratio(60),
@@ -38,9 +41,17 @@ export default StyleSheet.create({
         paddingVertical: 20,
         elevation: 5,
     },
+    dot: {
+        height: Metrics.ratio(6),
+        width: Metrics.ratio(6),
+        borderRadius: Metrics.ratio(3),
+        marginRight: 2,
+        backgroundColor: Colors.placeholderContent,
+    },
     btnContainer: {
         alignItems: "center",
         marginTop: 50,
-        justifyContent:'flex-end',
-    }
+        justifyContent: 'flex-end',
+    },
+
 })
