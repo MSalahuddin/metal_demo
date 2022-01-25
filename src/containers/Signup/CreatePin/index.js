@@ -38,7 +38,7 @@ const CreatePin = ({ navigation }) => {
 
   const renderPinInput = () => {
     return (
-      <View style={{ alignItems: "center" }}>
+      <View style={{ alignItems: "center", marginVertical: 20, }}>
         <OTPInput
           textInputValue={pin}
           pinCount={4}
@@ -63,41 +63,12 @@ const CreatePin = ({ navigation }) => {
           source={bg_half}
       > */}
       {/* marginVertical: Metrics.screenHeight * 0.1 */}
-      <Image style={{
-        width: Metrics.ratio(200),
-        height: Metrics.ratio(60),
-        bottom: Metrics.ratio(60),
-      }} source={transparent_logo} />
-      <View style={{
-        backgroundColor: Colors.white,
-        width: Metrics.screenWidth * 0.85,
-        height: Metrics.screenHeight * 0.41,
-        paddingHorizontal: Metrics.screenWidth * 0.07,
-        borderRadius: 15,
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 5,
-        },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
-        elevation: 10,
-      }}>
+      <Image style={styles.logo} source={transparent_logo} />
+      <View style={styles.subContainer}>
         <HeadingText
           text={AuthString.CreatePin.createYourPin}
         />
-
-        <Text style={
-          {
-            fontFamily: Fonts.type.RobotoRegular,
-            fontSize: Fonts.size.sixteen,
-            color: Colors.greyContent,
-            marginTop: Metrics.ratio(30),
-            textAlign: "center",
-            lineHeight: Metrics.ratio(25)
-          }
-        }>{AuthString.CreatePin.desc}</Text>
+        <Text style={styles.text}>{AuthString.CreatePin.desc}</Text>
         {renderPinInput()}
 
         <Button

@@ -45,52 +45,18 @@ const PhoneNo = ({ navigation }) => {
           source={bg_half}
       > */}
       {/* marginVertical: Metrics.screenHeight * 0.1 */}
-      <Image style={{
-        width: Metrics.ratio(200),
-        height: Metrics.ratio(60),
-        bottom: Metrics.ratio(60),
-      }} source={transparent_logo} />
-      <View style={{
-        backgroundColor: Colors.white,
-        width: Metrics.screenWidth * 0.85,
-        height: Metrics.screenHeight * 0.41,
-        paddingHorizontal: Metrics.screenWidth * 0.07,
-        borderRadius: 15,
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 5,
-        },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
-        elevation: 10,
-      }}>
+      <Image style={styles.logo} source={transparent_logo} />
+      <View style={styles.subContainer}>
 
         <HeadingText
           text={AuthString.PhoneNo.letStart}
         />
         {/* <CountryPickerModal/> */}
-        <View style={{ width: "100%", marginTop: Metrics.ratio(30), justifyContent: "center" }}>
-          <View style={{
-            paddingBottom: Metrics.ratio(10),
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            borderBottomWidth: 1,
-            borderBottomColor: Colors.underlineColor,
-          }}>
+        <View style={{ width: "100%", marginTop: Metrics.ratio(10), justifyContent: "center" }}>
+          <View style={styles.selectCountry}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={{
-                fontFamily: Fonts.type.RobotoRegular,
-                fontSize: Fonts.size.large,
-                color: Colors.greyContent,
-              }}>+1</Text>
-              <Image style={{
-                marginLeft: Metrics.ratio(6),
-                width: Metrics.ratio(30),
-                height: Metrics.ratio(20)
-              }} source={united_states} />
+              <Text style={styles.countryCode}>+1</Text>
+              <Image style={styles.countryFlag} source={united_states} />
             </View>
             <Image style={{
               marginLeft: Metrics.ratio(10),
@@ -103,7 +69,6 @@ const PhoneNo = ({ navigation }) => {
             marginVertical: Metrics.ratio(15),
             width: '100%'
           }}
-     
           returnKeyType="done"
           enablesReturnKeyAutomaticallly={true}
           placeholder={AuthString.placeholder.mobileNo}
@@ -117,7 +82,7 @@ const PhoneNo = ({ navigation }) => {
         // emailError={currentPasswordError}
         />
         <Button
-          customBtnStyle={{ width: '100%', }}
+          customBtnStyle={{ width: '100%',}}
           btnText={AuthString.ButtonText.next}
           onPress={() => handleNavigate()}
         />
